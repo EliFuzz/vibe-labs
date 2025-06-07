@@ -1,7 +1,144 @@
 ---
 title: Risks
-description: Prompt Risks
+description: Prompt Engineering Risks
 hide_table_of_contents: true
 ---
 
 # Risks
+
+ <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Risk</th>
+                <th>Type</th>
+                <th>Definition / Mechanism</th>
+                <th>Examples</th>
+                <th>Impact</th>
+                <th>Mitigation Strategies</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5">Security Vulnerabilities</td>
+                <td><b>Prompt Injection</b></td>
+                <td>Attack Vector</td>
+                <td>Adversarial user input modifies system behavior by injecting malicious instructions</td>
+                <td>“Ignore previous instructions…”; hidden HTML or file-based commands</td>
+                <td>Data leak, integrity breach, unauthorized actions</td>
+                <td>Input sanitization, strict system prompts, input/output filtering, access restrictions</td>
+            </tr>
+            <tr>
+                <td><b>Jailbreaking</b></td>
+                <td>Attack Vector</td>
+                <td>Crafting prompts to bypass safety filters or policy constraints</td>
+                <td>“Pretend this is fiction…”; chaining prompts to extract forbidden info</td>
+                <td>Harmful content generation, policy violations</td>
+                <td>Red-teaming, RLHF updates, adversarial testing, guardrails</td>
+            </tr>
+            <tr>
+                <td><b>Backdoor / Poisoning</b></td>
+                <td>Training/Embedding Exploit</td>
+                <td>Training data or embeddings embed hidden malicious triggers</td>
+                <td>Specific inputs cause LLM to produce harmful outputs</td>
+                <td>Persistent vulnerabilities, stealth behaviors</td>
+                <td>Data vetting, anomaly detection, training pipeline audits</td>
+            </tr>
+            <tr>
+                <td><b>Indirect Prompt Injection</b></td>
+                <td>Data Injection</td>
+                <td>Malicious prompts embedded in external content accessed via RAG or scraping</td>
+                <td>HTML/PDF with hidden instructions</td>
+                <td>Uncontrolled behavior, data leaks</td>
+                <td>Sanitize retrieved content, isolate sources, human-in-loop review</td>
+            </tr>
+            <tr>
+                <td><b>Insecure Plugins/Tooling</b></td>
+                <td>Plugin Vulnerability</td>
+                <td>Plugins extend LLM capability but introduce security holes</td>
+                <td>Plugin runs attacker-controlled scripts or leaks data</td>
+                <td>Arbitrary code execution, unauthorized access</td>
+                <td>Sandbox plugins, vet third-party tools, restrict permissions</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Data & Privacy Concerns</td>
+                <td><b>Information Leakage</b></td>
+                <td>Privacy Violation</td>
+                <td>LLM reveals private or sensitive data, intentionally or inadvertently</td>
+                <td>Outputs include names, passwords, SSNs, proprietary info</td>
+                <td>Privacy violations, regulatory issues</td>
+                <td>Scrub data, apply output filtering, auditing, privacy mechanisms</td>
+            </tr>
+            <tr>
+                <td><b>System Prompt Leakage</b></td>
+                <td>Prompt Exposure</td>
+                <td>System/policy prompts revealed to users or attackers</td>
+                <td>Leaks via responses or bugs exposing internal structure</td>
+                <td>Aids attack design and prompt reverse-engineering</td>
+                <td>Hide system prompts, privilege separation, output filters</td>
+            </tr>
+            <tr>
+                <td><b>Prompt Leaking / Stealing</b></td>
+                <td>Confidentiality Threat</td>
+                <td>Attackers reconstruct hidden prompts or extract template behavior</td>
+                <td>Query models to reverse-engineer internal prompt structure</td>
+                <td>Loss of IP, strategic prompt exposure</td>
+                <td>Limit prompt exposure, guardrails, query pattern detection</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">Reliability & Performance Issues</td>
+                <td><b>Denial of Service / Resource Abuse</b></td>
+                <td>Availability Attack</td>
+                <td>Prompts that induce excessive computation, causing outages or costs</td>
+                <td>Recursive prompts, prompt bombing, token flooding</td>
+                <td>High costs, degraded performance</td>
+                <td>Token limits, rate limiting, input validation</td>
+            </tr>
+            <tr>
+                <td><b>Vector/Embedding Exploits</b></td>
+                <td>Embedding Manipulation</td>
+                <td>Embedding input is manipulated to skew search or retrieval accuracy</td>
+                <td>Embedding space poisoned to prioritize malicious results</td>
+                <td>Integrity compromise, hijacked retrieval</td>
+                <td>Sanitize input, monitor vector drift, restrict uploads</td>
+            </tr>
+
+            <tr>
+                <td rowspan="1">Ethical & Societal Concerns</td>
+                <td><b>Misinformation & Bias</b></td>
+                <td>Content Risk</td>
+                <td>Prompt context leads to inaccurate, biased, or fabricated (hallucinated) outputs</td>
+                <td>Incorrect medical/legal advice, hallucinated sources, stereotypes</td>
+                <td>Public harm, misinformation spread, reputation risk</td>
+                <td>Bias audits, prompt shaping, citation enforcement, post-checking, factual grounding</td>
+            </tr>
+
+            <tr>
+                <td rowspan="3">Operational / Platform Risks</td>
+                <td><b>Excessive Agency</b></td>
+                <td>Over-Autonomy</td>
+                <td>Model is allowed too much autonomy, causing harmful or uncontrolled actions</td>
+                <td>LLM sends emails, makes purchases, executes code</td>
+                <td>Loss of control, security breach, compliance failure</td>
+                <td>Principle of least privilege, action gating, logging</td>
+            </tr>
+            <tr>
+                <td><b>Supply-Chain / Model Theft</b></td>
+                <td>Dependency Risk</td>
+                <td>Third-party dependencies or models are malicious or compromised</td>
+                <td>Backdoored models or plugins; stolen embeddings</td>
+                <td>IP loss, backdoor attacks, data exfiltration</td>
+                <td>Audit dependencies, secure hosting, integrity verification</td>
+            </tr>
+            <tr>
+                <td><b>Lock-In</b></td>
+                <td>Vendor Dependency</td>
+                <td>Vendors restrict access to key data or models, or skew it due to proprietary or regulatory reasons</td>
+                <td>APIs hide sensitive regulatory topics; fine-tuned models biased to protect commercial interests</td>
+                <td>Lack of transparency, stifled competition, reduced user trust</td>
+                <td>Vendor-neutral standards, model disclosures, auditability, open-source alternatives</td>
+            </tr>
+
+        </tbody>
+    </table>
