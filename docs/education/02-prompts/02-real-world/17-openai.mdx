@@ -1,0 +1,57 @@
+---
+title: OpenAI
+description: OpenAI Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import ChatGPT45 from "!!raw-loader!./assets/openai/4-5.txt";
+import ChatGPT4o from "!!raw-loader!./assets/openai/4o.txt";
+import ChatGPTDalle from "!!raw-loader!./assets/openai/dalle.txt";
+import EditAudio from "!!raw-loader!./assets/openai/edit-audio.py";
+import EditText from "!!raw-loader!./assets/openai/edit-text.py";
+import FunctionSchema from "!!raw-loader!./assets/openai/function-schema.py";
+import MetaAudio from "!!raw-loader!./assets/openai/meta-audio.py";
+import MetaSchema from "!!raw-loader!./assets/openai/meta-schema.py";
+import MetaText from "!!raw-loader!./assets/openai/meta-text.py";
+import ChatGPTSummary from "!!raw-loader!./assets/openai/summary.json";
+import ChatGPTSystem from "!!raw-loader!./assets/openai/system.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="4-5" label="GPT-4.5">
+    <CodeBlock language="markdown">{ChatGPT45}</CodeBlock>
+  </TabItem>
+  <TabItem value="4o" label="GPT-4o">
+    <CodeBlock language="markdown">{ChatGPT4o}</CodeBlock>
+  </TabItem>
+  <TabItem value="dalle" label="DALL-E">
+    <CodeBlock language="markdown">{ChatGPTDalle}</CodeBlock>
+  </TabItem>
+  <TabItem value="summary" label="Summary">
+    <CodeBlock language="json">{ChatGPTSummary}</CodeBlock>
+  </TabItem>
+  <TabItem value="system" label="System">
+    <CodeBlock language="markdown">{ChatGPTSystem}</CodeBlock>
+  </TabItem>
+  <TabItem value="meta-text" label="Meta Text">
+    <CodeBlock language="python">{MetaText}</CodeBlock>
+  </TabItem>
+  <TabItem value="meta-audio" label="Meta Audio">
+    <CodeBlock language="python">{MetaAudio}</CodeBlock>
+  </TabItem>
+  <TabItem value="edit-text" label="Edit Text">
+    <CodeBlock language="python">{EditText}</CodeBlock>
+  </TabItem>
+  <TabItem value="edit-audio" label="Edit Audio">
+    <CodeBlock language="python">{EditAudio}</CodeBlock>
+  </TabItem>
+  <TabItem value="meta-schema" label="Meta Schema">
+    <CodeBlock language="python">{MetaSchema}</CodeBlock>
+  </TabItem>
+  <TabItem value="function-schema" label="Function Schema">
+    <CodeBlock language="python">{FunctionSchema}</CodeBlock>
+  </TabItem>
+</Tabs>
