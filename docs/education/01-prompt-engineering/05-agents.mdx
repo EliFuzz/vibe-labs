@@ -4,4 +4,240 @@ description: Agents
 hide_table_of_contents: true
 ---
 
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
 # Agents
+
+<Tabs queryString="primary">
+  <TabItem value="definition" label="Definition">
+
+    AI Agent - is a software program that uses artificial intelligence to autonomously interact with its environment and achieve specific goals set by a user or another system. These agents can process information, learn from experience, and make decisions to perform tasks on behalf of a user.
+
+    ```mermaid
+    graph LR
+        subgraph Tools
+            api(API call)
+            web(Access Internet)
+            code(Interprete Code)
+        end
+
+        user(User) ---> autonomousAction(Autonomous Action)
+        agent(AI Agent) --> autonomousAction
+        agent --->|access| memory(Memory)
+        agent ---> reactivity(Reactivity)
+        reactivity --> env(Environment)
+        agent ---> delegateTasks(Delegate Tasks)
+        agent ---> Tools
+    ```
+
+    **Key Characteristics**
+
+    - **Autonomy**: operates independently for efficient task performance in unpredictable environments
+    - **Reactivity**: perceives environmental changes and responds in real-time to handle dynamic situations
+    - **Proactivity**: exhibits goal-directed behavior with initiative, planning, and strategic execution
+    - **Social Ability**: designed for collaboration and communication with agents or humans, essential for multi-agent systems
+    - **Learning Capabilities**: improves performance by learning from experiences and adjusting strategies for continuous adaptation
+    - **Goal-Orientation**: driven by specific objectives, ensuring purposeful actions contribute to predefined outcomes
+    - **Rationality**: makes decisions to maximize performance by processing information and selecting optimal approaches
+
+    </TabItem>
+    <TabItem value="comparison" label="Comparison">
+        <table>
+            <thead>
+               <tr>
+                <th>Aspect</th>
+                <th>Bot</th>
+                <th>AI Assistant</th>
+                <th>AI Agent</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Purpose</b></td>
+                    <td>Automating simple tasks or conversations</td>
+                    <td>Assisting users with tasks</td>
+                    <td>Autonomously and proactively perform complex, multi-step tasks</td>
+                </tr>
+                <tr>
+                    <td><b>Capabilities</b></td>
+                    <td>Follows pre-defined rules; limited learning; basic interactions</td>
+                    <td>Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions</td>
+                    <td>Can perform complex, multi-step actions; learns and adapts; can make decisions independently</td>
+                </tr>
+                <tr>
+                    <td><b>Autonomy Level</b></td>
+                    <td>Least autonomous; typically follows pre-programmed rules</td>
+                    <td>Less autonomous; requires user input and direction</td>
+                    <td>Highest degree of autonomy; operates independently to achieve a goal</td>
+                </tr>
+                <tr>
+                    <td><b>Complexity</b></td>
+                    <td>Suited for simpler tasks and interactions</td>
+                    <td>Better suited for simpler tasks and interactions</td>
+                    <td>Designed to handle complex tasks and workflows</td>
+                </tr>
+                <tr>
+                    <td><b>Learning Ability</b></td>
+                    <td>Limited or no learning</td>
+                    <td>May have some learning capabilities</td>
+                    <td>Often employs machine learning to adapt and improve performance over time</td>
+                </tr>
+                <tr>
+                    <td><b>Interaction Style</b></td>
+                    <td>Reactive; responds to triggers or commands</td>
+                    <td>Reactive; responds to user requests</td>
+                    <td>Proactive; goal-oriented</td>
+                </tr>
+            </tbody>
+        </table>
+    </TabItem>
+    <TabItem value="types" label="Types">
+        <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Definition</th>
+                <th>How it Works</th>
+                <th>Key Characteristics</th>
+                <th>Limitations</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Simple Reflex Agents</b></td>
+                <td>Respond directly to current environment state without memory</td>
+                <td>Follows "if-then" rules based on immediate inputs</td>
+                <td>Quick, efficient for straightforward tasks; minimal computational resources</td>
+                <td>Limited adaptability; cannot learn or improve; struggles with complex scenarios</td>
+                <td>Thermostats, basic game bots, simple chatbots</td>
+            </tr>
+            <tr>
+                <td><b>Model-Based Reflex Agents</b></td>
+                <td>Maintains internal model of environment to predict future states</td>
+                <td>Uses internal model to understand effects of actions over time and make informed decisions</td>
+                <td>Better for dynamic environments; can predict future states; more adaptable; handles incomplete info</td>
+                <td>Increased complexity and computational needs; limited by model accuracy</td>
+                <td>Self-driving cars, home automation systems, autonomous drones</td>
+            </tr>
+            <tr>
+                <td><b>Goal-Based Agents</b></td>
+                <td>Designed to achieve specific objectives, evaluating actions based on goal proximity</td>
+                <td>Evaluates potential outcomes of actions to determine best path to a predefined goal</td>
+                <td>Highly adaptable; strategic decision-making; handles wide range of tasks</td>
+                <td>More complex; requires planning and evaluating future actions</td>
+                <td>Virtual assistants (Siri, Alexa), industrial assembly robots</td>
+            </tr>
+            <tr>
+                <td><b>Utility-Based Agents</b></td>
+                <td>Maximizes a specific utility function (e.g., profit, satisfaction) rather than just a goal</td>
+                <td>Evaluates desirability of different outcomes using a utility function to choose optimal actions</td>
+                <td>Complex decision-making with trade-offs; functions in uncertain environments; finds optimal solutions</td>
+                <td>Requires carefully designed utility function; computationally intensive</td>
+                <td>Investment algorithms, navigation route optimizers</td>
+            </tr>
+            <tr>
+                <td><b>Learning Agents</b></td>
+                <td>Improves performance over time by learning from environmental interactions and experiences</td>
+                <td>Adapts behavior based on feedback; continuously refines decision-making</td>
+                <td>Highly adaptable; continuous improvement; discovers novel solutions</td>
+                <td>Requires large data/feedback; can be computationally intensive</td>
+                <td>Customer service chatbots, autonomous vehicles</td>
+            </tr>
+            <tr>
+                <td><b>Multi-Agent Systems (MAS)</b></td>
+                <td>Multiple autonomous agents interact and collaborate for shared/individual goals</td>
+                <td>Agents communicate, coordinate, and collaborate, often with checks and balances</td>
+                <td>Organized structure for complex ops; better resource allocation; efficient; robust; scalable</td>
+                <td>Complex coordination; potential for conflicts</td>
+                <td>Swarm robotics, smart traffic lights, supply chain management</td>
+            </tr>
+            <tr>
+                <td><b>Hierarchical Agents</b></td>
+                <td>Master agent coordinates subordinate agents for specific functions</td>
+                <td>Master agent delegates tasks and makes high-level decisions; subordinates execute</td>
+                <td>Simplifies complex operations; better resource allocation and task division</td>
+                <td>Can be rigid; requires effective communication between levels</td>
+                <td>Orchestrator-specialist systems in complex tasks</td>
+            </tr>
+            <tr>
+                <td><b>Physical Agents</b></td>
+                <td>Interact with the physical world</td>
+                <td>Use sensors to perceive and actuators to perform physical actions</td>
+                <td>Direct manipulation of physical environments</td>
+                <td>Hardware integration challenges; safety concerns</td>
+                <td>Smart manufacturing robots</td>
+            </tr>
+            <tr>
+                <td><b>Software-based Agents</b></td>
+                <td>Operate entirely in digital environments</td>
+                <td>Interact with users, applications, or online data sources via digital means (APIs, databases)</td>
+                <td>Efficient for digital tasks; no physical constraints</td>
+                <td>Limited to digital interactions</td>
+                <td>Chatbots, virtual assistants, data analysis agents</td>
+            </tr>
+            <tr>
+                <td><b>Hybrid Agents</b></td>
+                <td>Combine capabilities of software-based and physical agents</td>
+                <td>Continuously learn from both digital and physical interactions, processing multi-modal data</td>
+                <td>Seamless integration with real world; adaptive to complex environments</td>
+                <td>Increased complexity in design and integration</td>
+                <td>Autonomous vehicles (physical & digital data fusion)</td>
+            </tr>
+        </tbody>
+        </table>
+
+    </TabItem>
+    <TabItem value="architectural-paradigms" label="Architectural Paradigms">
+        <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Core Principle</th>
+                <th>Advantages</th>
+                <th>Limitations</th>
+                <th>Use Cases</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Reactive Architectures</b></td>
+                <td>Direct stimulus-response; no internal model or memory</td>
+                <td>Fast, efficient, simple, resilient due to component decoupling</td>
+                <td>Cannot learn from past; no future planning; struggles with novel situations</td>
+                <td>Thermostats, basic game AI, simple chatbots</td>
+            </tr>
+            <tr>
+                <td><b>Deliberative Architectures</b></td>
+                <td>Internal model of world; reasoning and planning about future</td>
+                <td>Complex decision-making, reasoning, long-term planning</td>
+                <td>Slower due to extensive computation; increased complexity</td>
+                <td>Robotic warehouse pickers, complex planning systems</td>
+            </tr>
+            <tr>
+                <td><b>Hybrid Architectures</b></td>
+                <td>Combines reactive (quick response) and deliberative (planning) components</td>
+                <td>Balances immediate reactions with long-term planning; adaptable; efficient resource allocation</td>
+                <td>Increased complexity in design and integration</td>
+                <td>Self-driving cars, rescue robots, autonomous underwater vehicles</td>
+            </tr>
+            <tr>
+                <td><b>BDI Architecture</b></td>
+                <td>Models human practical reasoning: Beliefs, Desires, Intentions</td>
+                <td>Mimics human-like decision-making; clear goal-oriented behavior</td>
+                <td>Can be complex to implement; managing conflicting desires</td>
+                <td>Intelligent assistants, autonomous planning systems</td>
+            </tr>
+            <tr>
+                <td><b>Layered Architectures</b></td>
+                <td>Divides processing into hierarchical levels (e.g., reactive, deliberative)</td>
+                <td>Clear separation of concerns; easier debugging, scaling, maintenance</td>
+                <td>Can be rigid if communication between layers is poorly designed</td>
+                <td>AI-powered cybersecurity systems, complex automation</td>
+            </tr>
+        </tbody>
+        </table>
+    </TabItem>
+
+</Tabs>
