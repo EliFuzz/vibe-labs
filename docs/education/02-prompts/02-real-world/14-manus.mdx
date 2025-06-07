@@ -1,0 +1,29 @@
+---
+title: Manus
+description: Manus Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Agent from "!!raw-loader!./assets/manus/agent-loop.txt";
+import Module from "!!raw-loader!./assets/manus/module.txt";
+import Prompt from "!!raw-loader!./assets/manus/prompt.txt";
+import Tools from "!!raw-loader!./assets/manus/tools.json";
+
+<Tabs queryString="primary">
+  <TabItem value="agent" label="Agent">
+    <CodeBlock language="markdown">{Agent}</CodeBlock>
+  </TabItem>
+  <TabItem value="modules" label="Modules">
+    <CodeBlock language="markdown">{Module}</CodeBlock>
+  </TabItem>
+  <TabItem value="prompt" label="Prompt">
+    <CodeBlock language="markdown">{Prompt}</CodeBlock>
+  </TabItem>
+  <TabItem value="tools" label="Tools">
+    <CodeBlock language="json">{Tools}</CodeBlock>
+  </TabItem>
+</Tabs>

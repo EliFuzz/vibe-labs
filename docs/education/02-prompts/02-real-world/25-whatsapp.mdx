@@ -1,0 +1,21 @@
+---
+title: WhatsApp
+description: WhatsApp Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Llama from "!raw-loader!./assets/whatsapp/llama4.txt";
+import MetaAI from "!raw-loader!./assets/whatsapp/meta-ai.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="llama" label="Llama">
+    <CodeBlock language="markdown">{Llama}</CodeBlock>
+  </TabItem>
+  <TabItem value="meta-ai" label="Meta AI">
+    <CodeBlock language="markdown">{MetaAI}</CodeBlock>
+  </TabItem>
+</Tabs>

@@ -1,0 +1,29 @@
+---
+title: Cursor
+description: Cursor Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Agent from "!raw-loader!./assets/cursor/agent.txt";
+import Chat from "!raw-loader!./assets/cursor/chat.txt";
+import MemoryRating from "!raw-loader!./assets/cursor/memory-rating.txt";
+import Memory from "!raw-loader!./assets/cursor/memory.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="agent" label="Agent">
+    <CodeBlock language="markdown">{Agent}</CodeBlock>
+  </TabItem>
+  <TabItem value="chat" label="Chat">
+    <CodeBlock language="markdown">{Chat}</CodeBlock>
+  </TabItem>
+  <TabItem value="memory-rating" label="Memory Rating">
+    <CodeBlock language="markdown">{MemoryRating}</CodeBlock>
+  </TabItem>
+  <TabItem value="memory" label="Memory">
+    <CodeBlock language="markdown">{Memory}</CodeBlock>
+  </TabItem>
+</Tabs>

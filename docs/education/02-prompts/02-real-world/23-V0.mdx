@@ -1,0 +1,33 @@
+---
+title: V0
+description: V0 Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Instructions from "!raw-loader!./assets/v0/instructions.txt";
+import Model from "!raw-loader!./assets/v0/model.txt";
+import Prompt from "!raw-loader!./assets/v0/prompt.txt";
+import System from "!raw-loader!./assets/v0/system.txt";
+import Tools from "!raw-loader!./assets/v0/tools.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="instructions" label="Instructions">
+    <CodeBlock language="markdown">{Instructions}</CodeBlock>
+  </TabItem>
+  <TabItem value="model" label="Model">
+    <CodeBlock language="markdown">{Model}</CodeBlock>
+  </TabItem>
+  <TabItem value="prompt" label="Prompt">
+    <CodeBlock language="markdown">{Prompt}</CodeBlock>
+  </TabItem>
+  <TabItem value="system" label="System">
+    <CodeBlock language="markdown">{System}</CodeBlock>
+  </TabItem>
+  <TabItem value="tools" label="Tools">
+    <CodeBlock language="json">{Tools}</CodeBlock>
+  </TabItem>
+</Tabs>

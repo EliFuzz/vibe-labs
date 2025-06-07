@@ -1,0 +1,25 @@
+---
+title: Windsurf
+description: Windsurf Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Tools from "!!raw-loader!./assets/windsurf/tools.json";
+import Prompt from "!raw-loader!./assets/windsurf/prompt.txt";
+import System from "!raw-loader!./assets/windsurf/system.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="prompt" label="Prompt">
+    <CodeBlock language="markdown">{Prompt}</CodeBlock>
+  </TabItem>
+  <TabItem value="system" label="System">
+    <CodeBlock language="markdown">{System}</CodeBlock>
+  </TabItem>
+  <TabItem value="tools" label="Tools">
+    <CodeBlock language="json">{Tools}</CodeBlock>
+  </TabItem>
+</Tabs>

@@ -1,0 +1,21 @@
+---
+title: Replit
+description: Replit Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Prompt from "!!raw-loader!./assets/replit/prompt.txt";
+import Tools from "!!raw-loader!./assets/replit/tools.json";
+
+<Tabs queryString="primary">
+  <TabItem value="prompt" label="Prompt">
+    <CodeBlock language="markdown">{Prompt}</CodeBlock>
+  </TabItem>
+  <TabItem value="tools" label="Tools">
+    <CodeBlock language="json">{Tools}</CodeBlock>
+  </TabItem>
+</Tabs>

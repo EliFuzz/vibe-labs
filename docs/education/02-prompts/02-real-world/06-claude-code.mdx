@@ -1,0 +1,49 @@
+---
+title: Claude Code
+description: Claude Code Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import AgentTool from "!raw-loader!./assets/claude-code/agent-tool.js";
+import BatchExecutionTool from "!raw-loader!./assets/claude-code/batch-execution-tool.js";
+import BugReportTool from "!raw-loader!./assets/claude-code/bug-report-tool.js";
+import ClearTool from "!raw-loader!./assets/claude-code/clear-tool.js";
+import EditTool from "!raw-loader!./assets/claude-code/edit-tool.js";
+import LsTool from "!raw-loader!./assets/claude-code/ls-tool.js";
+import MemoryTool from "!raw-loader!./assets/claude-code/memory-tool.js";
+import ReadNotebook from "!raw-loader!./assets/claude-code/read-notebook.js";
+import System from "!raw-loader!./assets/claude-code/system.js";
+
+<Tabs queryString="primary">
+  <TabItem value="agent-tool" label="Agent Tool">
+    <CodeBlock language="markdown">{AgentTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="batch-execution-tool" label="Batch Execution Tool">
+    <CodeBlock language="markdown">{BatchExecutionTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="bug-report-tool" label="Bug Report Tool">
+    <CodeBlock language="markdown">{BugReportTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="clear-tool" label="Clear Tool">
+    <CodeBlock language="markdown">{ClearTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="edit-tool" label="Edit Tool">
+    <CodeBlock language="markdown">{EditTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="ls-tool" label="LS Tool">
+    <CodeBlock language="markdown">{LsTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="memory-tool" label="Memory Tool">
+    <CodeBlock language="markdown">{MemoryTool}</CodeBlock>
+  </TabItem>
+  <TabItem value="read-notebook" label="Read Notebook">
+    <CodeBlock language="markdown">{ReadNotebook}</CodeBlock>
+  </TabItem>
+  <TabItem value="system" label="System">
+    <CodeBlock language="markdown">{System}</CodeBlock>
+  </TabItem>
+</Tabs>

@@ -1,0 +1,45 @@
+---
+title: Grok
+description: Grok Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Summary from "!raw-loader!./assets/grok/ask-grok-summarizer.j2";
+import DeepSearchSummary from "!raw-loader!./assets/grok/deepsearch-final-summarizer-prompt.j2";
+import Analize from "!raw-loader!./assets/grok/grok-analyze-button.j2";
+import Jailbreak from "!raw-loader!./assets/grok/grok-jailbreak-prompt.txt";
+import Grok2 from "!raw-loader!./assets/grok/grok2.txt";
+import Grok3Recent from "!raw-loader!./assets/grok/grok3-0330.j2";
+import Grok3DeepSearch from "!raw-loader!./assets/grok/grok3-with-deep-search.txt";
+import Grok3 from "!raw-loader!./assets/grok/grok3.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="summary" label="Summary">
+    <CodeBlock language="markdown">{Summary}</CodeBlock>
+  </TabItem>
+  <TabItem value="deepsearch-summary" label="DeepSearch Summary">
+    <CodeBlock language="markdown">{DeepSearchSummary}</CodeBlock>
+  </TabItem>
+  <TabItem value="grok-analyze" label="Grok Analyze">
+    <CodeBlock language="markdown">{Analize}</CodeBlock>
+  </TabItem>
+  <TabItem value="grok-jailbreak" label="Grok Jailbreak">
+    <CodeBlock language="markdown">{Jailbreak}</CodeBlock>
+  </TabItem>
+  <TabItem value="grok2" label="Grok2">
+    <CodeBlock language="markdown">{Grok2}</CodeBlock>
+  </TabItem>
+  <TabItem value="grok3" label="Grok3">
+    <CodeBlock language="markdown">{Grok3}</CodeBlock>
+  </TabItem>
+  <TabItem value="grok3-recent" label="Grok3 Recent">
+    <CodeBlock language="markdown">{Grok3Recent}</CodeBlock>
+  </TabItem>
+  <TabItem value="grok3-deepsearch" label="Grok3 DeepSearch">
+    <CodeBlock language="markdown">{Grok3DeepSearch}</CodeBlock>
+  </TabItem>
+</Tabs>

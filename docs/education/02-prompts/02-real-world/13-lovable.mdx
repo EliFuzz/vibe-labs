@@ -1,0 +1,21 @@
+---
+title: Lovable
+description: Lovable Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import PromptRecent from "!raw-loader!./assets/lovable/prompt-2025.txt";
+import Prompt from "!raw-loader!./assets/lovable/prompt.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="prompt" label="Prompt">
+    <CodeBlock language="markdown">{Prompt}</CodeBlock>
+  </TabItem>
+  <TabItem value="prompt-recent" label="Prompt Recent">
+    <CodeBlock language="markdown">{PromptRecent}</CodeBlock>
+  </TabItem>
+</Tabs>

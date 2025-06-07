@@ -1,0 +1,21 @@
+---
+title: Claude
+description: Claude Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Prompt from "!raw-loader!./assets/claude/claude-2025.txt";
+import SonnetPrompt from "!raw-loader!./assets/claude/claude-sonnet-3.7.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="prompt" label="Prompt">
+    <CodeBlock language="markdown">{Prompt}</CodeBlock>
+  </TabItem>
+  <TabItem value="sonnet-prompt" label="Sonnet Prompt">
+    <CodeBlock language="markdown">{SonnetPrompt}</CodeBlock>
+  </TabItem>
+</Tabs>
