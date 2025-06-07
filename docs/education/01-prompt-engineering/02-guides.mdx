@@ -4,4 +4,204 @@ description: Prompt Guides
 hide_table_of_contents: true
 ---
 
-# Prompt Guides
+# Prompt Elements
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Description</th>
+      <th>Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <b>Clear &amp; Specific Task/Instruction</b>
+      </td>
+      <td>
+        The core action you want the AI to perform. This should be an
+        unambiguous and direct command or question. Use action verbs and avoid
+        vagueness
+      </td>
+      <td>
+        This is the fundamental directive for the AI. Without a clear task, the
+        model has no direction and is likely to produce irrelevant or generic
+        output
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Context</b>
+      </td>
+      <td>
+        The background information, setting, or circumstances relevant to the
+        task. This helps the AI understand the "why" behind your request
+      </td>
+      <td>
+        Context narrows the AI's focus, allowing it to generate a more relevant
+        and tailored response that aligns with your specific situation or need
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Expectations</b>
+      </td>
+      <td>
+        Clearly defining what a "good" response looks like including
+        completeness, level of detail, or aspects to emphasize or avoid
+      </td>
+      <td>
+        Helps the AI align more closely with success criteria, reducing
+        trial-and-error by anticipating how the output will be evaluated or used
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Role/Persona</b>
+      </td>
+      <td>
+        Assigning a specific role or persona for the AI to adopt (e.g., "Act as
+        a seasoned financial analyst," "You are a creative copywriter")
+      </td>
+      <td>
+        This significantly influences the tone, style, vocabulary, and even the
+        reasoning process of the AI, leading to more authentic and useful
+        outputs
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Audience</b>
+      </td>
+      <td>
+        Specifying the intended audience for the AI's response (e.g., "Explain
+        this to a 5-year-old," "Write for a technical audience")
+      </td>
+      <td>
+        This dictates the level of complexity, language, and detail in the
+        response, ensuring it is understandable and impactful for the target
+        reader
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Format</b>
+      </td>
+      <td>
+        Defining the desired structure of the output (e.g., "in a bulleted
+        list," "as a JSON object," "in a table with columns for...")
+      </td>
+      <td>
+        A specified format ensures the information is organized in a usable and
+        easily digestible manner, saving time on post-processing
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Source</b>
+      </td>
+      <td>
+        Providing authoritative references or datasets the AI should base its
+        response on, or citing where information should come from
+      </td>
+      <td>
+        Anchors the AI's response in credibility or required material,
+        especially critical for factual accuracy, traceability, or domain
+        compliance
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Examples (Few-Shot Prompting)</b>
+      </td>
+      <td>
+        Providing one or more examples of the desired input-output pattern
+      </td>
+      <td>
+        This is a powerful way to guide the AI's response, especially for
+        complex or novel tasks, by demonstrating the expected style and
+        structure
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Constraints &amp; Negative Constraints</b>
+      </td>
+      <td>
+        Setting boundaries or limitations on the response (e.g., "in under 200
+        words," "do not include technical jargon," "avoid using passive voice")
+      </td>
+      <td>
+        Constraints help to refine the output, making it more focused and
+        aligned with specific requirements. Negative constraints are
+        particularly useful for avoiding undesirable content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Tone &amp; Style</b>
+      </td>
+      <td>
+        Describing the desired emotional or stylistic quality of the response
+        (e.g., "formal," "humorous," "empathetic," "optimistic")
+      </td>
+      <td>
+        Tone and style add a layer of personality and nuance to the output,
+        making it more engaging and appropriate for the context
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Chain of Thought/Step-by-Step Reasoning</b>
+      </td>
+      <td>
+        Instructing the AI to "think step-by-step" or outline its reasoning
+        process before providing the final answer
+      </td>
+      <td>
+        This technique can improve the accuracy of the final output, especially
+        for complex reasoning tasks, and provides transparency into the AI's
+        process
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Questioning &amp; Iteration</b>
+      </td>
+      <td>
+        Asking clarifying questions within the prompt or planning for iterative
+        refinement of the AI's responses
+      </td>
+      <td>
+        This fosters a more collaborative interaction, allowing you to guide the
+        AI towards a better answer through a series of prompts
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Request for Multiple Versions</b>
+      </td>
+      <td>
+        Asking for several different versions or perspectives on the same topic
+      </td>
+      <td>
+        This can be useful for brainstorming, exploring different creative
+        angles, or A/B testing different approaches
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Inclusion of Keywords</b>
+      </td>
+      <td>
+        Strategically placing important keywords within the prompt that you want
+        to see in the output
+      </td>
+      <td>
+        This can help to ensure that the AI's response focuses on the most
+        critical aspects of your request
+      </td>
+    </tr>
+  </tbody>
+</table>
