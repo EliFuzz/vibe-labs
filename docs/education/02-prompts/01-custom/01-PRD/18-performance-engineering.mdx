@@ -1,0 +1,404 @@
+---
+title: Performance Engineering
+description: Performance engineering for the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Performance Engineering
+
+## Purpose
+
+Define comprehensive performance engineering requirements for high-load, enterprise-grade systems. This section establishes performance budgets, optimization strategies, and engineering practices to ensure systems meet demanding performance requirements.
+
+## Prerequisites
+
+- Technical architecture and infrastructure requirements defined
+- SRE framework and SLI/SLO requirements established
+- Functional requirements and user experience goals understood
+- Scale and load expectations documented
+
+## Section Structure & Requirements
+
+### 1. Performance Engineering Strategy
+
+**Objective**: Define overall approach to performance engineering
+
+**Required Elements:**
+
+- **Performance Philosophy**: Approach to performance engineering and optimization
+- **Performance Goals**: Specific performance objectives and targets
+- **Performance Budget Framework**: How performance budgets are defined and managed
+- **Performance Engineering Process**: How performance is engineered throughout development
+- **Performance Culture**: How performance awareness is built into team culture
+
+**Quality Criteria:**
+
+- Strategy aligns with business objectives and user needs
+- Goals are specific, measurable, and achievable
+- Budget framework enables performance decision-making
+- Process integrates performance into development lifecycle
+
+**Template:**
+
+## Performance Engineering Strategy
+
+### Performance Philosophy
+
+[Overall approach to performance engineering and system optimization]
+
+### Performance Goals
+
+- **User Experience Goals**: [Response time, throughput, availability targets]
+- **Business Goals**: [Cost efficiency, scalability, competitive advantage]
+- **Technical Goals**: [Resource utilization, system efficiency, maintainability]
+
+### Performance Budget Framework
+
+- **Response Time Budgets**: [Allocated time for different system components]
+- **Resource Budgets**: [CPU, memory, network, storage allocations]
+- **Cost Budgets**: [Infrastructure cost targets and constraints]
+- **Complexity Budgets**: [Acceptable levels of system complexity]
+
+### Performance Engineering Process
+
+1. **Requirements Analysis**: [How performance requirements are analyzed]
+2. **Architecture Review**: [How architecture is reviewed for performance]
+3. **Implementation Guidelines**: [Performance guidelines for development]
+4. **Testing & Validation**: [How performance is tested and validated]
+5. **Monitoring & Optimization**: [Ongoing performance monitoring and optimization]
+
+### Performance Culture
+
+[How performance awareness is built into team culture and practices]
+
+### 2. High-Load System Patterns
+
+**Objective**: Define patterns and strategies for high-load system design
+
+**Required Elements:**
+
+- **Caching Strategies**: Multi-level caching and cache management
+- **Database Scaling**: Sharding, replication, and database optimization
+- **Load Balancing**: Traffic distribution and load balancing strategies
+- **Content Delivery**: CDN and edge computing strategies
+- **Asynchronous Processing**: Background processing and queue management
+
+**Template:**
+
+## High-Load System Patterns
+
+### Caching Strategies
+
+**Cache Levels**:
+
+- **Browser Cache**: [Client-side caching strategies]
+- **CDN Cache**: [Content delivery network caching]
+- **Application Cache**: [In-memory application caching]
+- **Database Cache**: [Database query result caching]
+
+**Cache Patterns**:
+
+- **Cache-Aside**: [Application manages cache directly]
+- **Write-Through**: [Cache updated synchronously with database]
+- **Write-Behind**: [Cache updated asynchronously]
+- **Refresh-Ahead**: [Cache refreshed before expiration]
+
+**Cache Management**:
+
+- **Cache Invalidation**: [How cached data is invalidated]
+- **Cache Warming**: [How caches are pre-populated]
+- **Cache Monitoring**: [How cache performance is monitored]
+
+### Database Scaling Patterns
+
+**Horizontal Scaling**:
+
+- **Read Replicas**: [Read-only database replicas for query distribution]
+- **Sharding**: [Data partitioning across multiple databases]
+- **Federation**: [Database splitting by function]
+
+**Vertical Scaling**:
+
+- **Resource Optimization**: [CPU, memory, storage optimization]
+- **Query Optimization**: [Database query performance tuning]
+- **Index Optimization**: [Database indexing strategies]
+
+**CQRS & Event Sourcing**:
+
+- **Command Query Separation**: [Separate read and write models]
+- **Event Store**: [Event-based data persistence]
+- **Read Model Optimization**: [Optimized read-only data models]
+
+### Load Balancing Strategies
+
+**Load Balancer Types**:
+
+- **Layer 4 (Transport)**: [TCP/UDP load balancing]
+- **Layer 7 (Application)**: [HTTP/HTTPS load balancing]
+- **Global Load Balancing**: [Geographic traffic distribution]
+
+**Load Balancing Algorithms**:
+
+- **Round Robin**: [Sequential request distribution]
+- **Least Connections**: [Route to least busy server]
+- **Weighted Routing**: [Route based on server capacity]
+- **Health-Based Routing**: [Route only to healthy servers]
+
+### Content Delivery Networks (CDN)
+
+- **CDN Strategy**: [How content is distributed globally]
+- **Edge Computing**: [Processing at edge locations]
+- **Cache Policies**: [What content is cached and for how long]
+- **Origin Protection**: [How origin servers are protected]
+
+### 3. Capacity Planning & Resource Management
+
+**Objective**: Define capacity planning methodologies and resource optimization
+
+**Required Elements:**
+
+- **Capacity Planning Process**: Systematic approach to capacity planning
+- **Resource Forecasting**: How future resource needs are predicted
+- **Auto-Scaling Strategies**: Automatic resource scaling policies
+- **Resource Optimization**: Strategies for efficient resource utilization
+- **Cost Optimization**: Balancing performance with cost efficiency
+
+**Template:**
+
+## Capacity Planning & Resource Management
+
+### Capacity Planning Process
+
+1. **Baseline Measurement**: [Current resource utilization and performance]
+2. **Growth Projection**: [Expected growth in users, data, and transactions]
+3. **Resource Modeling**: [Mathematical models for resource requirements]
+4. **Scenario Planning**: [Planning for different growth scenarios]
+5. **Capacity Provisioning**: [How additional capacity is provisioned]
+
+### Resource Forecasting
+
+**Forecasting Methods**:
+
+- **Trend Analysis**: [Historical trend-based forecasting]
+- **Seasonal Modeling**: [Accounting for seasonal variations]
+- **Business-Driven Forecasting**: [Based on business growth plans]
+- **Machine Learning Models**: [ML-based capacity prediction]
+
+**Forecasting Metrics**:
+
+- **CPU Utilization**: [Processor usage forecasting]
+- **Memory Usage**: [Memory consumption forecasting]
+- **Storage Growth**: [Data storage growth forecasting]
+- **Network Bandwidth**: [Network usage forecasting]
+
+### Auto-Scaling Strategies
+
+**Horizontal Auto-Scaling**:
+
+- **Scale-Out Triggers**: [When to add more instances]
+- **Scale-In Triggers**: [When to remove instances]
+- **Scaling Policies**: [How quickly to scale up/down]
+- **Minimum/Maximum Limits**: [Scaling boundaries]
+
+**Vertical Auto-Scaling**:
+
+- **Resource Adjustment**: [CPU, memory scaling policies]
+- **Performance Thresholds**: [When to scale resources]
+- **Scaling Windows**: [When scaling is allowed]
+
+**Predictive Scaling**:
+
+- **Traffic Prediction**: [Anticipating traffic patterns]
+- **Pre-Scaling**: [Scaling before demand increases]
+- **Schedule-Based Scaling**: [Scaling based on known patterns]
+
+### Resource Optimization
+
+- **Right-Sizing**: [Matching resources to actual needs]
+- **Resource Pooling**: [Sharing resources across services]
+- **Spot Instance Usage**: [Using discounted cloud resources]
+- **Reserved Capacity**: [Long-term resource commitments]
+
+### Cost Optimization
+
+[Strategies for balancing performance with cost efficiency]
+
+### 4. Performance Testing & Validation
+
+**Objective**: Define comprehensive performance testing framework
+
+**Required Elements:**
+
+- **Performance Testing Strategy**: Overall approach to performance testing
+- **Testing Types**: Different types of performance tests
+- **Test Environment Management**: How test environments are managed
+- **Performance Test Automation**: Automated performance testing
+- **Performance Regression Testing**: Preventing performance regressions
+
+**Template:**
+
+## Performance Testing & Validation
+
+### Performance Testing Strategy
+
+[Overall approach to performance testing throughout development lifecycle]
+
+### Performance Testing Types
+
+**Load Testing**:
+
+- **Normal Load**: [Testing under expected load conditions]
+- **Peak Load**: [Testing under maximum expected load]
+- **Sustained Load**: [Testing under prolonged load conditions]
+
+**Stress Testing**:
+
+- **Breaking Point**: [Finding system failure points]
+- **Recovery Testing**: [Testing system recovery after failure]
+- **Resource Exhaustion**: [Testing under resource constraints]
+
+**Spike Testing**:
+
+- **Traffic Spikes**: [Testing sudden traffic increases]
+- **Load Ramp-Up**: [Testing gradual load increases]
+- **Load Ramp-Down**: [Testing load decreases]
+
+**Volume Testing**:
+
+- **Data Volume**: [Testing with large data sets]
+- **User Volume**: [Testing with many concurrent users]
+- **Transaction Volume**: [Testing high transaction rates]
+
+### Test Environment Management
+
+- **Environment Parity**: [Matching production environment characteristics]
+- **Test Data Management**: [Managing test data sets]
+- **Environment Provisioning**: [Creating and managing test environments]
+- **Environment Monitoring**: [Monitoring test environment health]
+
+### Performance Test Automation
+
+- **Automated Test Execution**: [Running tests automatically]
+- **Performance CI/CD**: [Integrating performance tests into pipelines]
+- **Automated Analysis**: [Automatic performance test result analysis]
+- **Regression Detection**: [Automatically detecting performance regressions]
+
+### Performance Benchmarking
+
+[Establishing and maintaining performance benchmarks]
+
+### 5. Performance Monitoring & Optimization
+
+**Objective**: Define ongoing performance monitoring and optimization practices
+
+**Required Elements:**
+
+- **Performance Monitoring Strategy**: How performance is continuously monitored
+- **Performance Metrics**: Key performance metrics and KPIs
+- **Performance Alerting**: When and how performance alerts are triggered
+- **Performance Analysis**: How performance issues are analyzed
+- **Continuous Optimization**: Ongoing performance improvement processes
+
+### 6. Performance SLA Engineering
+
+**Objective**: Define performance-related SLAs and engineering practices
+
+**Required Elements:**
+
+- **Performance SLIs**: Service Level Indicators for performance
+- **Performance SLOs**: Service Level Objectives for performance
+- **Performance SLAs**: Customer-facing performance commitments
+- **Performance Error Budgets**: How performance error budgets are managed
+- **Performance Incident Response**: How performance incidents are handled
+
+## Information Gathering Requirements
+
+### Performance Context Needed:
+
+- Expected load and scale requirements
+- Performance requirements and constraints
+- Current performance baseline and bottlenecks
+- Available performance testing tools and infrastructure
+- Team performance engineering experience
+
+### Validation Requirements:
+
+- Performance engineering team review
+- Load testing validation of requirements
+- Infrastructure team validation of capacity plans
+- Business stakeholder validation of performance SLAs
+
+## Cross-Reference Requirements
+
+### Must Reference:
+
+- SRE framework and SLI/SLO requirements
+- Technical architecture and infrastructure
+- User experience requirements and expectations
+- Business objectives and cost constraints
+
+### Must Support:
+
+- System architecture and design decisions
+- Infrastructure planning and provisioning
+- Operational monitoring and alerting
+- Incident response and problem resolution
+
+## Common Pitfalls to Avoid
+
+### Performance Engineering Pitfalls:
+
+- **Premature optimization**: Optimizing before understanding bottlenecks
+- **Over-engineering**: Building more performance than needed
+- **Ignoring user experience**: Focusing on technical metrics over user impact
+- **Performance debt**: Deferring performance work until it becomes critical
+
+### Testing Pitfalls:
+
+- **Unrealistic testing**: Testing scenarios that don't match production
+- **Insufficient test data**: Not testing with production-like data volumes
+- **Environment differences**: Testing in environments unlike production
+- **Manual testing only**: Not automating performance testing
+
+## Edge Case Considerations
+
+### When Performance Requirements are Extreme:
+
+- Implement comprehensive performance engineering practices
+- Use advanced optimization techniques and technologies
+- Plan for extensive performance testing and validation
+- Consider specialized performance engineering expertise
+
+### When Resources are Constrained:
+
+- Focus on highest-impact performance optimizations
+- Use cost-effective performance improvement strategies
+- Prioritize performance work based on business impact
+- Consider performance vs. cost trade-offs carefully
+
+## Validation Checkpoints
+
+### Before Finalizing Section:
+
+- [ ] Performance strategy aligns with business objectives
+- [ ] High-load patterns are appropriate for scale requirements
+- [ ] Capacity planning methodology is comprehensive
+- [ ] Performance testing framework is thorough
+- [ ] Monitoring and optimization processes are defined
+
+### Cross-Section Validation:
+
+- [ ] Performance requirements align with SRE framework
+- [ ] Capacity plans support technical architecture
+- [ ] Performance SLAs align with business commitments
+- [ ] Testing strategy supports quality assurance
+
+## Output Quality Standards
+
+- Performance engineering strategy is comprehensive and practical
+- High-load patterns are appropriate for scale requirements
+- Capacity planning is systematic and data-driven
+- Performance testing is thorough and automated
+- Monitoring and optimization are continuous and effective
+```

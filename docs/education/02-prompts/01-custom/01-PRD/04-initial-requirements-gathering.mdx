@@ -1,0 +1,256 @@
+---
+title: Initial Requirements Gathering
+description: Initial requirements gathering for the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Initial Requirements Gathering
+
+## Purpose
+
+This prompt conducts comprehensive information gathering before PRD creation begins. ALL information must be collected and validated before proceeding to any PRD sections.
+
+## Critical Instructions
+
+- **ASK ALL QUESTIONS** - Do not skip any category
+- **DOCUMENT ASSUMPTIONS** for any missing information
+- **VALIDATE RESPONSES** for consistency and completeness
+- **FLAG UNCERTAINTIES** clearly for stakeholder clarification
+- **CROSS-CHECK** related answers for conflicts
+
+## Comprehensive Questionnaire
+
+### A. Business Context & Strategy
+
+#### A1. Company & Product Context
+
+1. What is your company's mission and core business?
+2. How does this product fit into your overall business strategy?
+3. What is your company's current market position?
+4. What are your primary revenue streams?
+5. Who are your main competitors and how do you differentiate?
+
+#### A2. Business Objectives
+
+1. What specific business problems is this product solving?
+2. What are the primary business goals for this product?
+3. What are the success criteria from a business perspective?
+4. What is the expected ROI and timeline for achieving it?
+5. How does this product support broader company objectives?
+
+#### A3. Market Context
+
+1. What is the total addressable market (TAM) size?
+2. What is your serviceable addressable market (SAM)?
+3. What market trends are driving the need for this product?
+4. What regulatory or compliance requirements apply?
+5. What are the key market risks and opportunities?
+
+### B. Product Vision & Scope
+
+#### B1. Product Definition
+
+1. What is the core product concept in one sentence?
+2. What is the primary value proposition?
+3. What problem does this product solve for users?
+4. How is this product different from existing solutions?
+5. What is the product's unique selling proposition?
+
+#### B2. Product Scope
+
+1. What features are absolutely essential (MVP)?
+2. What features are important but not critical?
+3. What features are nice-to-have for future versions?
+4. What is explicitly OUT of scope for this version?
+5. What integrations or partnerships are required?
+
+#### B3. Product Strategy
+
+1. What is the go-to-market strategy?
+2. What is the pricing strategy and model?
+3. What is the product lifecycle and evolution plan?
+4. How will the product be supported and maintained?
+5. What is the sunset/migration strategy for legacy systems?
+
+### C. User & Customer Analysis
+
+#### C1. Target Users
+
+1. Who are the primary users of this product?
+2. Who are the secondary users or stakeholders?
+3. What are the key user demographics and characteristics?
+4. What are the primary user goals and motivations?
+5. What are the main user pain points and frustrations?
+
+#### C2. User Behavior & Context
+
+1. How do users currently solve this problem?
+2. What is the typical user workflow or process?
+3. In what context/environment will users use this product?
+4. What devices/platforms will users primarily use?
+5. What is the expected user expertise level?
+
+#### C3. Customer Journey
+
+1. How do users discover and evaluate solutions?
+2. What is the typical decision-making process?
+3. Who are the key decision-makers and influencers?
+4. What are the main adoption barriers?
+5. What drives user retention and loyalty?
+
+### D. Technical Context & Constraints
+
+#### D1. Technical Environment
+
+1. What existing systems must this product integrate with?
+2. What is the current technology stack and architecture?
+3. What are the performance and scalability requirements?
+4. What are the security and compliance requirements?
+5. What are the data privacy and protection requirements?
+
+#### D1.1. SRE & Reliability Requirements
+
+1. What are the availability and reliability requirements (SLAs)?
+2. What are the acceptable error rates and performance targets?
+3. What is the current operational maturity and SRE experience?
+4. What monitoring and observability tools are currently in use?
+5. What incident response and on-call procedures exist?
+6. What are the disaster recovery and business continuity requirements?
+
+#### D1.2. Performance & Scale Requirements
+
+1. What are the expected peak load and traffic patterns?
+2. What are the performance requirements (latency, throughput)?
+3. What are the scalability requirements (users, data, geography)?
+4. What caching and content delivery requirements exist?
+5. What database performance and scaling requirements apply?
+
+#### D2. Technical Constraints
+
+1. What technical limitations or constraints exist?
+2. What legacy systems must be supported?
+3. What are the infrastructure and hosting requirements?
+4. What are the backup and disaster recovery requirements?
+5. What monitoring and analytics capabilities are needed?
+
+#### D3. Development Context
+
+1. What is the current development team composition?
+2. What development methodologies are used?
+3. What tools and platforms are currently in use?
+4. What are the testing and quality assurance processes?
+5. What are the deployment and release processes?
+
+### E. Resource & Timeline Context
+
+#### E1. Budget & Resources
+
+1. What is the total budget for this product?
+2. What team members are available for this project?
+3. What external resources or vendors are needed?
+4. What tools, licenses, or infrastructure costs are required?
+5. What ongoing operational costs are expected?
+
+#### E2. Timeline & Milestones
+
+1. What is the target launch date?
+2. What are the key milestone dates and dependencies?
+3. What external deadlines or events drive the timeline?
+4. What are the consequences of delays?
+5. What is the minimum viable timeline?
+
+#### E3. Success Metrics & KPIs
+
+1. How will product success be measured?
+2. What are the key performance indicators (KPIs)?
+3. What metrics will be tracked and how often?
+4. What are the success thresholds and targets?
+5. How will user satisfaction be measured?
+
+## Information Validation Checklist
+
+### Completeness Check
+
+- [ ] All sections have responses
+- [ ] No critical information gaps
+- [ ] Assumptions documented for missing data
+- [ ] Stakeholder contacts identified for clarification
+
+### Consistency Check
+
+- [ ] Business objectives align with product scope
+- [ ] User needs match proposed features
+- [ ] Technical constraints align with requirements
+- [ ] Timeline realistic given scope and resources
+- [ ] Budget sufficient for proposed scope
+
+### Feasibility Check
+
+- [ ] Technical requirements are achievable
+- [ ] Timeline is realistic
+- [ ] Resources are adequate
+- [ ] Market assumptions are reasonable
+- [ ] Business model is viable
+
+## Information Repository Template
+
+Create a structured information repository with:
+
+### Business Context Summary
+
+- Company mission and strategy
+- Market context and competitive landscape
+- Business objectives and success criteria
+
+### Product Definition Summary
+
+- Core product concept and value proposition
+- Scope and feature prioritization
+- Go-to-market and pricing strategy
+
+### User Profile Summary
+
+- Primary and secondary user personas
+- User goals, pain points, and behaviors
+- Customer journey and decision process
+
+### Technical Context Summary
+
+- System architecture and integrations
+- Performance and security requirements
+- Development and deployment context
+
+### Resource Summary
+
+- Budget and team composition
+- Timeline and key milestones
+- Success metrics and KPIs
+
+## Next Steps Protocol
+
+### If Information is Complete:
+
+1. Validate all responses for consistency
+2. Create comprehensive information repository
+3. Proceed to PRD section development
+4. Reference this repository throughout the process
+
+### If Information is Incomplete:
+
+1. Document specific gaps and assumptions
+2. Identify stakeholders for clarification
+3. Create interim assumption framework
+4. Proceed with documented limitations
+5. Flag for stakeholder review and validation
+
+### If Conflicts are Identified:
+
+1. Document all conflicting information
+2. Analyze implications of each perspective
+3. Identify decision-makers for resolution
+4. Propose resolution strategies
+5. Escalate for stakeholder decision
+
+**CRITICAL**: Do not proceed to PRD section development until this information gathering is complete and validated.
+```

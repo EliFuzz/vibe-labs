@@ -1,0 +1,328 @@
+---
+title: Distributed Architecture
+description: Distributed architecture of the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Distributed Systems Architecture
+
+## Purpose
+
+Define comprehensive distributed systems architecture requirements for enterprise-grade, high-load systems. This section addresses the unique challenges and patterns required for distributed system design.
+
+## Prerequisites
+
+- Functional requirements and scale expectations defined
+- Performance and availability requirements established
+- Enterprise constraints and governance requirements understood
+- Team distributed systems expertise assessed
+
+## Section Structure & Requirements
+
+### 1. Distributed Architecture Strategy
+
+**Objective**: Define overall approach to distributed system design
+
+**Required Elements:**
+
+- **Distribution Strategy**: Why and how the system will be distributed
+- **Service Decomposition**: How functionality will be divided into services
+- **Deployment Topology**: How services will be deployed and distributed
+- **Communication Patterns**: How services will communicate with each other
+- **Data Distribution**: How data will be distributed across services
+
+**Quality Criteria:**
+
+- Distribution strategy aligns with business and technical requirements
+- Service boundaries are well-defined and logical
+- Communication patterns are efficient and reliable
+- Data distribution supports consistency and performance needs
+
+**Template:**
+
+## Distributed Architecture Strategy
+
+### Distribution Rationale
+
+[Why distributed architecture is needed and benefits expected]
+
+### Service Decomposition Strategy
+
+- **Decomposition Approach**: [Domain-driven, capability-based, etc.]
+- **Service Boundaries**: [How service boundaries are defined]
+- **Service Sizing**: [Guidelines for service size and complexity]
+- **Service Dependencies**: [How dependencies between services are managed]
+
+### Deployment Topology
+
+- **Service Distribution**: [How services are distributed across infrastructure]
+- **Geographic Distribution**: [Multi-region deployment strategy]
+- **Environment Strategy**: [Development, staging, production environments]
+
+### Communication Patterns
+
+- **Synchronous Communication**: [REST APIs, GraphQL, gRPC]
+- **Asynchronous Communication**: [Message queues, event streaming]
+- **Service Discovery**: [How services find and communicate with each other]
+
+### Data Distribution Strategy
+
+[How data is distributed, partitioned, and synchronized across services]
+
+### 2. Microservices Architecture
+
+**Objective**: Define microservices patterns and implementation approach
+
+**Required Elements:**
+
+- **Service Design Principles**: Guidelines for designing individual services
+- **API Design Standards**: Standards for service APIs and contracts
+- **Service Mesh Architecture**: Service-to-service communication infrastructure
+- **Container Strategy**: Containerization and orchestration approach
+- **Service Lifecycle Management**: How services are developed, deployed, and maintained
+
+**Template:**
+
+## Microservices Architecture
+
+### Service Design Principles
+
+- **Single Responsibility**: [Each service has one clear responsibility]
+- **Autonomous Teams**: [Services owned by autonomous teams]
+- **Decentralized Governance**: [Service teams make their own technology choices]
+- **Failure Isolation**: [Service failures don't cascade to other services]
+
+### API Design Standards
+
+- **API Protocols**: [REST, GraphQL, gRPC standards]
+- **API Versioning**: [How API versions are managed]
+- **API Documentation**: [OpenAPI, schema documentation requirements]
+- **API Security**: [Authentication, authorization, rate limiting]
+
+### Service Mesh Architecture
+
+- **Service Mesh Technology**: [Istio, Linkerd, Consul Connect]
+- **Traffic Management**: [Load balancing, routing, traffic splitting]
+- **Security Policies**: [mTLS, service-to-service authentication]
+- **Observability**: [Distributed tracing, metrics collection]
+
+### Container Strategy
+
+- **Container Technology**: [Docker, containerd]
+- **Orchestration Platform**: [Kubernetes, Docker Swarm]
+- **Container Registry**: [Image storage and distribution]
+- **Container Security**: [Image scanning, runtime security]
+
+### Service Lifecycle Management
+
+[How services are developed, tested, deployed, and maintained]
+
+### 3. Data Consistency & Transaction Management
+
+**Objective**: Define data consistency patterns for distributed systems
+
+**Required Elements:**
+
+- **Consistency Models**: What consistency guarantees are provided
+- **Distributed Transaction Patterns**: SAGA, 2PC, eventual consistency approaches
+- **Event Sourcing**: Event-driven data management patterns
+- **CQRS Implementation**: Command Query Responsibility Segregation patterns
+- **Conflict Resolution**: How data conflicts are detected and resolved
+
+**Template:**
+
+## Data Consistency & Transaction Management
+
+### Consistency Models
+
+- **Strong Consistency**: [Where strong consistency is required]
+- **Eventual Consistency**: [Where eventual consistency is acceptable]
+- **Causal Consistency**: [Where causal ordering is important]
+
+### Distributed Transaction Patterns
+
+- **SAGA Pattern**: [Long-running transaction management]
+- **Two-Phase Commit**: [Where ACID transactions are required]
+- **Compensating Actions**: [How to handle transaction failures]
+
+### Event Sourcing
+
+- **Event Store**: [How events are stored and retrieved]
+- **Event Replay**: [How system state is reconstructed from events]
+- **Event Versioning**: [How event schema evolution is managed]
+
+### CQRS Implementation
+
+- **Command Side**: [How commands are processed and validated]
+- **Query Side**: [How read models are built and maintained]
+- **Synchronization**: [How command and query sides stay synchronized]
+
+### Conflict Resolution
+
+[How data conflicts are detected, resolved, and prevented]
+
+### 4. Service Communication & Integration
+
+**Objective**: Define service communication patterns and integration strategies
+
+**Required Elements:**
+
+- **API Gateway Pattern**: Centralized API management and routing
+- **Message Queue Architecture**: Asynchronous messaging patterns
+- **Event Streaming**: Real-time event processing and streaming
+- **Service Discovery**: How services find and connect to each other
+- **Circuit Breaker Patterns**: Fault tolerance and resilience patterns
+
+**Template:**
+
+## Service Communication & Integration
+
+### API Gateway Architecture
+
+- **Gateway Technology**: [Kong, Ambassador, AWS API Gateway]
+- **Routing Strategy**: [How requests are routed to services]
+- **Rate Limiting**: [How API usage is controlled and limited]
+- **Authentication**: [How API access is authenticated and authorized]
+
+### Message Queue Architecture
+
+- **Message Broker**: [RabbitMQ, Apache Kafka, AWS SQS]
+- **Queue Patterns**: [Point-to-point, publish-subscribe, request-reply]
+- **Message Durability**: [How message persistence is guaranteed]
+- **Dead Letter Queues**: [How failed messages are handled]
+
+### Event Streaming
+
+- **Streaming Platform**: [Apache Kafka, AWS Kinesis, Azure Event Hubs]
+- **Event Schema**: [How event schemas are defined and evolved]
+- **Stream Processing**: [How events are processed in real-time]
+- **Event Ordering**: [How event ordering is maintained]
+
+### Service Discovery
+
+- **Discovery Mechanism**: [DNS, service registry, service mesh]
+- **Health Checking**: [How service health is monitored]
+- **Load Balancing**: [How traffic is distributed across service instances]
+
+### Circuit Breaker Patterns
+
+- **Failure Detection**: [How service failures are detected]
+- **Circuit States**: [Open, closed, half-open circuit behavior]
+- **Fallback Strategies**: [What happens when circuits are open]
+- **Recovery Procedures**: [How circuits are reset and recovered]
+
+### 5. Fault Tolerance & Resilience
+
+**Objective**: Define fault tolerance and resilience patterns
+
+**Required Elements:**
+
+- **Failure Modes**: Types of failures the system must handle
+- **Resilience Patterns**: Bulkhead, timeout, retry, fallback patterns
+- **Chaos Engineering**: How system resilience is tested
+- **Disaster Recovery**: How the system recovers from major failures
+- **Business Continuity**: How business operations continue during failures
+
+### 6. Distributed System Monitoring
+
+**Objective**: Define monitoring and observability for distributed systems
+
+**Required Elements:**
+
+- **Distributed Tracing**: How requests are traced across services
+- **Metrics Collection**: What metrics are collected and how
+- **Log Aggregation**: How logs from multiple services are collected
+- **Alerting Strategy**: How alerts are generated and escalated
+- **Performance Monitoring**: How system performance is monitored
+
+## Information Gathering Requirements
+
+### Distributed Systems Context Needed:
+
+- Scale and performance requirements
+- Team distributed systems expertise
+- Existing infrastructure and constraints
+- Compliance and security requirements
+- Operational capabilities and preferences
+
+### Validation Requirements:
+
+- Distributed systems architecture review
+- Performance and scalability validation
+- Security and compliance review
+- Operational readiness assessment
+
+## Cross-Reference Requirements
+
+### Must Reference:
+
+- Performance and scalability requirements
+- Security and compliance requirements
+- Operational and monitoring requirements
+- Team capabilities and constraints
+
+### Must Support:
+
+- Implementation planning and estimation
+- Testing and validation strategies
+- Deployment and operations planning
+- Monitoring and maintenance procedures
+
+## Common Pitfalls to Avoid
+
+### Architecture Pitfalls:
+
+- **Distributed monolith**: Creating distributed system without benefits
+- **Premature distribution**: Distributing before understanding requirements
+- **Chatty interfaces**: Creating too many service-to-service calls
+- **Data inconsistency**: Not properly handling distributed data consistency
+
+### Communication Pitfalls:
+
+- **Synchronous coupling**: Over-relying on synchronous communication
+- **Message ordering**: Not considering message ordering requirements
+- **Error propagation**: Not properly handling communication failures
+- **Protocol mismatch**: Using inappropriate communication protocols
+
+## Edge Case Considerations
+
+### When Team Lacks Distributed Systems Experience:
+
+- Start with simpler distributed patterns
+- Plan for extensive training and mentoring
+- Consider external consulting for architecture review
+- Build monitoring and observability from day one
+
+### When Performance Requirements are Extreme:
+
+- Focus on critical path optimization
+- Plan for extensive performance testing
+- Consider specialized technologies and patterns
+- Build performance monitoring and alerting
+
+## Validation Checkpoints
+
+### Before Finalizing Section:
+
+- [ ] Distribution strategy is well-justified and appropriate
+- [ ] Service boundaries are logical and well-defined
+- [ ] Communication patterns are efficient and reliable
+- [ ] Data consistency approach is appropriate for requirements
+- [ ] Fault tolerance patterns are comprehensive
+
+### Cross-Section Validation:
+
+- [ ] Architecture supports functional requirements
+- [ ] Performance requirements can be met with proposed architecture
+- [ ] Security requirements are properly integrated
+- [ ] Operational requirements are supported
+
+## Output Quality Standards
+
+- Architecture is appropriate for scale and complexity requirements
+- Service design follows distributed systems best practices
+- Communication patterns are efficient and reliable
+- Fault tolerance and resilience are properly addressed
+- Monitoring and observability are comprehensive
+```

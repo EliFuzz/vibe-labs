@@ -1,0 +1,435 @@
+---
+title: Templates and Formats
+description: Templates and formats for the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Templates and Formats
+
+## Purpose
+
+Provide standardized templates and formatting guidelines to ensure consistent, professional presentation across all PRD sections and deliverables.
+
+## Document Structure Standards
+
+### 1. Overall Document Format
+
+**File Structure:**
+
+# [Product Name] - Product Requirements Document
+
+Version: [X.X]
+Date: [YYYY-MM-DD]
+Author: [Name]
+Stakeholders: [List of key stakeholders]
+
+## Document Control
+
+- **Version History**: [Track changes and versions]
+- **Review Status**: [Draft/Review/Approved]
+- **Next Review Date**: [When document should be reviewed]
+- **Distribution List**: [Who receives this document]
+
+## Table of Contents
+
+[Auto-generated table of contents with page numbers]
+
+[Document sections follow...]
+
+### 2. Section Header Standards
+
+**Primary Headers (H1):**
+
+# 1. Executive Summary
+
+# 2. Problem Statement & Market Analysis
+
+# 3. User Personas & Research
+
+[etc.]
+
+**Secondary Headers (H2):**
+
+## 1.1 Product Overview
+
+## 1.2 Business Case
+
+## 1.3 Key Success Factors
+
+[etc.]
+
+**Tertiary Headers (H3):**
+
+### Market Size and Opportunity
+
+### User Adoption Drivers
+
+### Technical Architecture Overview
+
+[etc.]
+
+### 3. Content Formatting Standards
+
+**Requirement Format:**
+
+### REQ-001: User Authentication
+
+**User Story**: As a [user type], I want [functionality] so that [benefit].
+
+**Acceptance Criteria**:
+
+- [ ] Criterion 1 with specific, measurable outcome
+- [ ] Criterion 2 with specific, measurable outcome
+- [ ] Criterion 3 with specific, measurable outcome
+
+**Priority**: Must Have
+**User Persona**: Primary User
+**Business Value**: [Specific business value]
+**Dependencies**: REQ-002, REQ-005
+**Assumptions**: [Any underlying assumptions]
+**Effort Estimate**: [T-shirt size or story points]
+
+**Risk Format:**
+
+### RISK-001: Technical Integration Complexity
+
+**Description**: [Clear description of the risk]
+**Probability**: Medium (40-60% chance)
+**Impact**: High (Significant delay or cost increase)
+**Timing**: Development Phase 2
+
+**Triggers**:
+
+- [Specific condition that indicates risk is materializing]
+- [Another trigger condition]
+
+**Mitigation**:
+
+- [Specific action to prevent or reduce risk]
+- [Another mitigation action]
+
+**Contingency**:
+
+- [What to do if risk occurs despite mitigation]
+
+**Owner**: [Person responsible]
+**Review Date**: [Next review date]
+
+**Metric Format:**
+
+### Metric: Monthly Active Users (MAU)
+
+**Definition**: Unique users who perform at least one key action per month
+**Target**: 10,000 MAU by end of Year 1
+**Measurement**: Google Analytics + internal user tracking
+**Frequency**: Monthly review, weekly monitoring
+**Owner**: Product Manager
+**Baseline**: 0 (new product)
+**Benchmark**: Industry average 5,000 MAU for similar products
+
+**SLI/SLO Format:**
+
+### SLI: API Availability
+
+**Definition**: Percentage of successful HTTP requests (status codes 200-299)
+**Measurement**: (Successful requests / Total requests) \* 100
+**Data Source**: Load balancer logs and application metrics
+**Measurement Window**: 30-day rolling window
+
+### SLO: API Availability Target
+
+**Target**: 99.9% availability over 30-day rolling window
+**Error Budget**: 0.1% (43.2 minutes of downtime per month)
+**Alerting Threshold**: 99.5% (when error budget is 50% consumed)
+**Owner**: SRE Team
+**Review Frequency**: Weekly SLO review, monthly SLO adjustment review
+
+**Error Budget Tracking Format:**
+
+### Error Budget: API Service
+
+**Service**: User API
+**SLO**: 99.9% availability
+**Time Window**: 30 days
+**Error Budget**: 0.1% (43.2 minutes)
+**Current Consumption**: 25% (10.8 minutes used)
+**Remaining Budget**: 75% (32.4 minutes remaining)
+**Burn Rate**: 0.5% per day
+**Status**: Healthy
+**Last Updated**: 2024-01-15 14:30 UTC
+
+**Incident Post-Mortem Format:**
+
+### Incident Post-Mortem: [Incident ID] - [Brief Description]
+
+**Date**: [YYYY-MM-DD]
+**Duration**: [Start time] - [End time] ([Total duration])
+**Severity**: [P0/P1/P2/P3]
+**Services Affected**: [List of affected services]
+**Impact**: [User impact and business impact]
+
+### Timeline
+
+- **[Time]**: [Event description]
+- **[Time]**: [Event description]
+- **[Time]**: [Event description]
+
+### Root Cause
+
+[Detailed description of the root cause]
+
+### Contributing Factors
+
+- [Factor 1]
+- [Factor 2]
+
+### Resolution
+
+[How the incident was resolved]
+
+### Action Items
+
+| Action     | Owner   | Due Date | Status   |
+| ---------- | ------- | -------- | -------- |
+| [Action 1] | [Owner] | [Date]   | [Status] |
+| [Action 2] | [Owner] | [Date]   | [Status] |
+
+### Lessons Learned
+
+[Key lessons and improvements identified]
+
+**Performance Budget Format:**
+
+### Performance Budget: [Component/Page Name]
+
+**Budget Owner**: [Team/Person responsible]
+**Last Updated**: [Date]
+
+### Response Time Budget
+
+- **Target**: < 200ms (95th percentile)
+- **Current**: 150ms (95th percentile)
+- **Budget Remaining**: 50ms
+- **Status**: ✅ Within budget
+
+### Resource Budget
+
+- **JavaScript Bundle**: 150KB (Target: 200KB) ✅
+- **CSS Bundle**: 50KB (Target: 75KB) ✅
+- **Images**: 500KB (Target: 1MB) ✅
+- **Total Page Weight**: 700KB (Target: 1.5MB) ✅
+
+### Performance Metrics
+
+- **First Contentful Paint**: 1.2s (Target: < 1.5s) ✅
+- **Largest Contentful Paint**: 2.1s (Target: < 2.5s) ✅
+- **Cumulative Layout Shift**: 0.05 (Target: < 0.1) ✅
+
+## Visual Elements Standards
+
+### 1. Tables
+
+**Standard Table Format:**
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Data 1   | Data 2   | Data 3   |
+| Data 4   | Data 5   | Data 6   |
+
+**Requirements Traceability Matrix:**
+| Requirement ID | User Need | Business Objective | Success Metric | Priority |
+| -------------- | --------- | ------------------ | -------------- | -------- |
+| REQ-001 | Login | User retention | Login success | Must |
+| REQ-002 | Search | User engagement | Search usage | Should |
+
+**Risk Assessment Matrix:**
+
+| Risk ID  | Risk Name | Probability | Impact | Priority | Owner |
+| -------- | --------- | ----------- | ------ | -------- | ----- |
+| RISK-001 | Tech Debt | High        | Medium | High     | CTO   |
+| RISK-002 | Market    | Medium      | High   | High     | PM    |
+
+### 2. Lists and Bullets
+
+**Prioritized Lists:**
+
+**Must Have (P0)**:
+
+- Feature 1: [Description and rationale]
+- Feature 2: [Description and rationale]
+
+**Should Have (P1)**:
+
+- Feature 3: [Description and rationale]
+- Feature 4: [Description and rationale]
+
+**Could Have (P2)**:
+
+- Feature 5: [Description and rationale]
+- Feature 6: [Description and rationale]
+
+**Won't Have (P3)**:
+
+- Feature 7: [Description and why excluded]
+- Feature 8: [Description and why excluded]
+
+**Process Steps:**
+
+1. **Step Name**: [Description of what happens]
+
+   - Sub-step A: [Detailed action]
+   - Sub-step B: [Detailed action]
+
+2. **Step Name**: [Description of what happens]
+   - Sub-step A: [Detailed action]
+   - Sub-step B: [Detailed action]
+
+### 3. Callout Boxes
+
+**Important Information:**
+
+> **⚠️ CRITICAL**: This is critical information that must not be overlooked.
+> **💡 TIP**: This is helpful information or best practice.
+> **⚠️ ASSUMPTION**: This is an assumption that needs validation.
+> **🔍 VALIDATION NEEDED**: This requires stakeholder validation.
+
+## Data Presentation Standards
+
+### 1. Financial Information
+
+**Budget Summary Format:**
+
+## Budget Summary (Annual)
+
+| Category   | Year 1 | Year 2 | Year 3 | Total   |
+| ---------- | ------ | ------ | ------ | ------- |
+| Personnel  | $500K  | $750K  | $1M    | $2.25M  |
+| Technology | $50K   | $75K   | $100K  | $225K   |
+| Marketing  | $100K  | $150K  | $200K  | $450K   |
+| **Total**  | $650K  | $975K  | $1.3M  | $2.925M |
+
+**ROI Calculation Format:**
+
+## Return on Investment Analysis
+
+**Investment**: $2.925M over 3 years
+**Revenue**: $5.2M over 3 years
+**Net Benefit**: $2.275M
+**ROI**: 78% over 3 years
+**Payback Period**: 18 months
+
+### 2. Timeline Information
+
+**Milestone Timeline Format:**
+
+## Key Milestones
+
+| Milestone    | Date    | Dependencies  | Success Criteria         |
+| ------------ | ------- | ------------- | ------------------------ |
+| MVP Complete | Q2 2024 | Team hired    | All P0 features working  |
+| Beta Launch  | Q3 2024 | MVP Complete  | 100 beta users onboarded |
+| GA Launch    | Q4 2024 | Beta feedback | Ready for public launch  |
+
+**Gantt Chart Alternative:**
+
+## Development Timeline
+
+**Q1 2024**:
+
+- Weeks 1-4: Team hiring and onboarding
+- Weeks 5-8: Architecture and design
+- Weeks 9-12: Core development begins
+
+**Q2 2024**:
+
+- Weeks 1-8: Feature development
+- Weeks 9-12: Integration and testing
+
+### 3. User Research Data
+
+**Persona Summary Format:**
+
+## Persona: Sarah the Sales Manager
+
+**Demographics**: 32 years old, MBA, $85K salary, works remotely
+**Goals**: Increase team productivity, hit quarterly targets
+**Pain Points**: Manual reporting, lack of real-time data
+**Behaviors**: Checks metrics daily, prefers mobile access
+**Quote**: "I need to see how my team is performing without waiting for reports"
+
+**User Journey Format:**
+
+## User Journey: New User Onboarding
+
+| Stage      | User Actions          | Emotions   | Pain Points      | Opportunities         |
+| ---------- | --------------------- | ---------- | ---------------- | --------------------- |
+| Discovery  | Searches for solution | Hopeful    | Too many options | Clear differentiation |
+| Evaluation | Compares features     | Analytical | Complex pricing  | Simple comparison     |
+| Trial      | Signs up for trial    | Excited    | Confusing setup  | Guided onboarding     |
+
+## Quality Assurance Checklist
+
+### Document Quality:
+
+- [ ] Consistent formatting throughout
+- [ ] All headers properly numbered
+- [ ] Tables properly formatted
+- [ ] Lists use consistent bullet styles
+- [ ] Callouts used appropriately
+
+### Content Quality:
+
+- [ ] All requirements follow standard format
+- [ ] All risks properly documented
+- [ ] All metrics clearly defined
+- [ ] All assumptions clearly marked
+- [ ] All cross-references accurate
+
+### Professional Standards:
+
+- [ ] Grammar and spelling checked
+- [ ] Technical terms defined
+- [ ] Acronyms spelled out on first use
+- [ ] Consistent terminology throughout
+- [ ] Executive summary appropriate for audience
+
+## Version Control Standards
+
+### Version Numbering:
+
+- **Major versions** (1.0, 2.0): Significant changes or complete rewrites
+- **Minor versions** (1.1, 1.2): New sections or substantial additions
+- **Patch versions** (1.1.1, 1.1.2): Small corrections or clarifications
+
+### Change Tracking:
+
+## Version History
+
+| Version | Date       | Author   | Changes                      |
+| ------- | ---------- | -------- | ---------------------------- |
+| 1.0     | 2024-01-15 | J. Smith | Initial draft                |
+| 1.1     | 2024-01-22 | J. Smith | Added technical requirements |
+| 1.1.1   | 2024-01-25 | J. Smith | Fixed formatting issues      |
+
+### Review Status:
+
+- **Draft**: Work in progress, not ready for review
+- **Review**: Ready for stakeholder review
+- **Approved**: Approved by stakeholders
+- **Final**: Final version for implementation
+
+## Export and Distribution Standards
+
+### File Formats:
+
+- **Working Document**: Markdown or Google Docs for collaboration
+- **Review Document**: PDF for formal review and approval
+- **Reference Document**: HTML or wiki for ongoing reference
+
+### Distribution:
+
+- **Stakeholder Review**: PDF with change tracking
+- **Team Reference**: HTML or wiki with search capability
+- **Archive**: PDF for permanent record
+```

@@ -1,0 +1,345 @@
+---
+title: Operational Excellence
+description: Operational excellence for the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Operational Excellence (OE)
+
+## Purpose
+
+Define comprehensive operational requirements for production-ready, enterprise-grade systems. This section ensures the product can be reliably operated, monitored, and maintained in production environments, integrating Site Reliability Engineering (SRE) practices and performance engineering principles.
+
+## Prerequisites
+
+- Technical architecture and infrastructure requirements defined
+- SRE framework and SLI/SLO requirements established
+- Performance engineering requirements defined
+- Security and compliance requirements understood
+- Team operational capabilities assessed
+
+## Section Structure & Requirements
+
+### 1. Production Operations Framework
+
+**Objective**: Define overall approach to production operations
+
+**Required Elements:**
+
+- **Operations Philosophy**: Approach to production operations and reliability
+- **Operational Responsibilities**: Who is responsible for different operational aspects
+- **Operations Team Structure**: How operations team is organized and staffed
+- **Operational Procedures**: Standard operating procedures for production
+- **Operations Automation**: How operational tasks are automated
+
+**Quality Criteria:**
+
+- Operations approach aligns with business requirements
+- Responsibilities are clearly defined and appropriate
+- Procedures are comprehensive and well-documented
+- Automation reduces manual effort and human error
+
+**Template:**
+
+## Production Operations Framework
+
+### Operations Philosophy
+
+[Approach to production operations, reliability, and service management]
+
+### Operational Responsibilities Matrix
+
+| Responsibility    | Primary Owner       | Secondary Owner  | Escalation          |
+| ----------------- | ------------------- | ---------------- | ------------------- |
+| System Monitoring | DevOps Team         | Development Team | Operations Manager  |
+| Incident Response | On-Call Engineer    | Team Lead        | Engineering Manager |
+| Deployment        | DevOps Team         | Development Team | Release Manager     |
+| Capacity Planning | Infrastructure Team | DevOps Team      | Engineering Manager |
+
+### Operations Team Structure
+
+- **DevOps Engineers**: [Responsibilities and skills required]
+- **Site Reliability Engineers**: [SRE responsibilities, error budget management, toil reduction]
+- **Infrastructure Engineers**: [Responsibilities and skills required]
+- **Performance Engineers**: [Performance optimization and capacity planning]
+- **On-Call Engineers**: [Rotation schedule, SLO compliance, incident response]
+
+### Standard Operating Procedures
+
+- **Daily Operations**: [Daily operational tasks and checks]
+- **Weekly Operations**: [Weekly maintenance and review tasks]
+- **Monthly Operations**: [Monthly planning and review activities]
+- **Quarterly Operations**: [Quarterly strategic reviews and planning]
+
+### Operations Automation
+
+[How operational tasks are automated and what tools are used]
+
+### 2. Monitoring & Observability
+
+**Objective**: Define comprehensive monitoring and observability strategy
+
+**Required Elements:**
+
+- **Monitoring Strategy**: Overall approach to system monitoring
+- **Metrics Framework**: What metrics are collected and how
+- **Logging Strategy**: How logs are collected, stored, and analyzed
+- **Distributed Tracing**: How requests are traced across system components
+- **Alerting Framework**: How alerts are generated, prioritized, and routed
+
+**Template:**
+
+## Monitoring & Observability
+
+### Monitoring Strategy
+
+- **Monitoring Philosophy**: [Approach to monitoring and observability]
+- **Monitoring Scope**: [What systems and components are monitored]
+- **Monitoring Tools**: [Prometheus, Grafana, DataDog, New Relic, etc.]
+
+### Metrics Framework
+
+- **SRE Metrics**: [SLI/SLO compliance, error budget consumption, toil metrics]
+- **Infrastructure Metrics**: [CPU, memory, disk, network metrics]
+- **Application Metrics**: [Response time, throughput, error rate]
+- **Performance Metrics**: [Latency percentiles, capacity utilization, cache hit rates]
+- **Business Metrics**: [User engagement, conversion, revenue metrics]
+- **Custom Metrics**: [Application-specific metrics and KPIs]
+
+### Logging Strategy
+
+- **Log Collection**: [How logs are collected from all components]
+- **Log Storage**: [Where logs are stored and for how long]
+- **Log Analysis**: [How logs are searched and analyzed]
+- **Log Retention**: [Log retention policies and compliance]
+
+### Distributed Tracing
+
+- **Tracing Technology**: [Jaeger, Zipkin, AWS X-Ray]
+- **Trace Collection**: [How traces are collected and sampled]
+- **Trace Analysis**: [How traces are analyzed for performance issues]
+- **Trace Retention**: [How long traces are retained]
+
+### Alerting Framework
+
+- **Alert Categories**: [Critical, warning, informational alerts]
+- **Alert Routing**: [How alerts are routed to appropriate teams]
+- **Alert Escalation**: [How alerts are escalated if not acknowledged]
+- **Alert Fatigue Prevention**: [How alert noise is minimized]
+
+### 3. Incident Response & Management
+
+**Objective**: Define incident response procedures and management processes
+
+**Required Elements:**
+
+- **Incident Classification**: How incidents are classified and prioritized
+- **Incident Response Procedures**: Step-by-step incident response process
+- **On-Call Management**: How on-call rotations are managed
+- **Incident Communication**: How incidents are communicated to stakeholders
+- **Post-Incident Review**: How incidents are analyzed and lessons learned
+
+**Template:**
+
+## Incident Response & Management
+
+### Incident Classification
+
+| Severity      | Definition                   | Response Time | Escalation |
+| ------------- | ---------------------------- | ------------- | ---------- |
+| P0 - Critical | System down, data loss       | 15 minutes    | Immediate  |
+| P1 - High     | Major functionality impaired | 1 hour        | 30 minutes |
+| P2 - Medium   | Minor functionality impaired | 4 hours       | 2 hours    |
+| P3 - Low      | Cosmetic issues, minor bugs  | 24 hours      | 8 hours    |
+
+### Incident Response Procedures
+
+1. **Detection**: [How incidents are detected and reported]
+2. **Assessment**: [How incident severity is assessed]
+3. **Response**: [Initial response and triage procedures]
+4. **Resolution**: [How incidents are resolved and verified]
+5. **Communication**: [How stakeholders are kept informed]
+6. **Documentation**: [How incidents are documented]
+
+### On-Call Management
+
+- **On-Call Schedule**: [Rotation schedule and coverage]
+- **On-Call Responsibilities**: [What on-call engineers are responsible for]
+- **Escalation Procedures**: [When and how to escalate incidents]
+- **On-Call Tools**: [PagerDuty, OpsGenie, etc.]
+
+### Incident Communication
+
+- **Internal Communication**: [How teams are notified and updated]
+- **External Communication**: [How customers and stakeholders are informed]
+- **Status Pages**: [How system status is communicated publicly]
+
+### Post-Incident Review
+
+- **Review Process**: [How post-incident reviews are conducted]
+- **Action Items**: [How improvement actions are tracked]
+- **Knowledge Sharing**: [How lessons learned are shared]
+
+### 4. Disaster Recovery & Business Continuity
+
+**Objective**: Define disaster recovery and business continuity procedures
+
+**Required Elements:**
+
+- **Disaster Recovery Strategy**: Overall approach to disaster recovery
+- **Recovery Time Objectives**: How quickly systems must be recovered
+- **Recovery Point Objectives**: How much data loss is acceptable
+- **Backup Procedures**: How data and systems are backed up
+- **Recovery Procedures**: Step-by-step recovery procedures
+- **Business Continuity Planning**: How business operations continue during disasters
+
+**Template:**
+
+## Disaster Recovery & Business Continuity
+
+### Disaster Recovery Strategy
+
+[Overall approach to disaster recovery and business continuity]
+
+### Recovery Objectives
+
+- **Recovery Time Objective (RTO)**: [Maximum acceptable downtime]
+- **Recovery Point Objective (RPO)**: [Maximum acceptable data loss]
+- **Mean Time to Recovery (MTTR)**: [Target time to restore service]
+
+### Backup Procedures
+
+- **Backup Strategy**: [Full, incremental, differential backup approach]
+- **Backup Schedule**: [When backups are performed]
+- **Backup Storage**: [Where backups are stored and for how long]
+- **Backup Testing**: [How backup integrity is verified]
+
+### Recovery Procedures
+
+- **System Recovery**: [How to recover system infrastructure]
+- **Data Recovery**: [How to recover application data]
+- **Application Recovery**: [How to recover application services]
+- **Network Recovery**: [How to recover network connectivity]
+
+### Business Continuity Planning
+
+- **Continuity Procedures**: [How business operations continue]
+- **Communication Plans**: [How stakeholders are informed]
+- **Alternative Procedures**: [Manual procedures when systems are down]
+- **Recovery Validation**: [How to verify successful recovery]
+
+### 5. Performance Management
+
+**Objective**: Define performance monitoring and optimization procedures
+
+**Required Elements:**
+
+- **Performance Monitoring**: How system performance is continuously monitored
+- **Performance Baselines**: Baseline performance metrics and expectations
+- **Performance Optimization**: How performance issues are identified and resolved
+- **Capacity Planning**: How future capacity needs are planned and provisioned
+- **Performance Testing**: How performance is tested in production
+
+### 6. Security Operations
+
+**Objective**: Define security operations and monitoring procedures
+
+**Required Elements:**
+
+- **Security Monitoring**: How security events are monitored and analyzed
+- **Threat Detection**: How security threats are detected and responded to
+- **Security Incident Response**: How security incidents are handled
+- **Vulnerability Management**: How vulnerabilities are identified and patched
+- **Compliance Monitoring**: How compliance is monitored and reported
+
+## Information Gathering Requirements
+
+### Operational Context Needed:
+
+- Current operational capabilities and maturity
+- Availability and reliability requirements
+- Compliance and regulatory requirements
+- Team operational experience and skills
+- Existing operational tools and processes
+
+### Validation Requirements:
+
+- Operations team review and validation
+- Security team validation of security operations
+- Business stakeholder validation of continuity plans
+- Technical validation of monitoring and alerting
+
+## Cross-Reference Requirements
+
+### Must Reference:
+
+- Technical architecture and infrastructure requirements
+- Performance and availability requirements
+- Security and compliance requirements
+- Resource requirements and team capabilities
+
+### Must Support:
+
+- Production deployment and operations
+- Incident response and problem resolution
+- Performance optimization and capacity planning
+- Security monitoring and compliance reporting
+
+## Common Pitfalls to Avoid
+
+### Operations Pitfalls:
+
+- **Reactive operations**: Only responding to issues instead of preventing them
+- **Manual processes**: Not automating repetitive operational tasks
+- **Poor monitoring**: Not having adequate visibility into system health
+- **Inadequate documentation**: Not documenting operational procedures
+
+### Incident Response Pitfalls:
+
+- **Unclear procedures**: Not having clear incident response procedures
+- **Poor communication**: Not communicating effectively during incidents
+- **Blame culture**: Focusing on blame instead of learning from incidents
+- **No follow-up**: Not conducting post-incident reviews and improvements
+
+## Edge Case Considerations
+
+### When Team Lacks Operational Experience:
+
+- Start with basic operational procedures and tools
+- Plan for extensive training and mentoring
+- Consider external operational consulting
+- Build operational maturity gradually
+
+### When Availability Requirements are Extreme:
+
+- Focus on redundancy and fault tolerance
+- Plan for comprehensive monitoring and alerting
+- Build automated recovery procedures
+- Consider follow-the-sun operational coverage
+
+## Validation Checkpoints
+
+### Before Finalizing Section:
+
+- [ ] Operations framework is comprehensive and practical
+- [ ] Monitoring and observability strategy is thorough
+- [ ] Incident response procedures are clear and actionable
+- [ ] Disaster recovery plans are tested and validated
+- [ ] Performance management approach is proactive
+
+### Cross-Section Validation:
+
+- [ ] Operational requirements align with technical architecture
+- [ ] Monitoring supports performance requirements
+- [ ] Incident response supports availability requirements
+- [ ] Security operations align with security requirements
+
+## Output Quality Standards
+
+- Operations framework is comprehensive and practical
+- Monitoring and alerting are proactive and actionable
+- Incident response procedures are clear and tested
+- Disaster recovery plans are thorough and validated
+- Performance management is continuous and effective
+```

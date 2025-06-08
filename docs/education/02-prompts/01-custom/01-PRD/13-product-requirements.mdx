@@ -1,0 +1,532 @@
+---
+title: Product Requirements
+description: Product requirements for the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Product Requirements
+
+## Purpose
+
+Generate comprehensive, actionable product requirements that translate user needs and business objectives into specific, measurable, and implementable features and capabilities. This section serves as the primary specification for development teams.
+
+## Required Information
+
+Before generating this section, ensure you have:
+
+- [ ] User research insights and persona definitions
+- [ ] Business objectives and success criteria
+- [ ] Technical constraints and platform requirements
+- [ ] Competitive analysis and market positioning
+- [ ] Stakeholder requirements and priorities
+- [ ] Regulatory and compliance requirements
+
+## Section Structure
+
+### 1. Requirements Overview & Principles
+
+**Template:**
+
+**Requirements Philosophy**: [Approach to requirement definition and prioritization]
+**Design Principles**: [Core principles guiding product decisions]
+**Success Criteria**: [How requirement success will be measured]
+**Requirement Categories**: [Functional, non-functional, business, technical]
+**Prioritization Framework**: [Method for ranking requirements]
+
+**Requirements:**
+
+- Clear requirements philosophy and approach
+- Defined design principles for decision-making
+- Measurable success criteria for each requirement
+- Comprehensive requirement categorization
+- Transparent prioritization methodology
+
+**Design Principles Examples:**
+
+- User-first: Always prioritize user value over internal convenience
+- Simplicity: Choose the simplest solution that meets user needs
+- Accessibility: Ensure product is usable by people with disabilities
+- Performance: Maintain fast, responsive user experience
+- Security: Protect user data and privacy by default
+- Scalability: Build for future growth and expansion
+
+**Validation Questions:**
+
+- Do principles provide clear guidance for difficult decisions?
+- Are success criteria specific and measurable?
+- Is the prioritization framework objective and repeatable?
+
+### 2. Functional Requirements
+
+#### 2.1 Core Features
+
+**Template for each feature:**
+
+**Feature**: [Feature Name]
+**Priority**: [Must-Have/Should-Have/Could-Have/Won't-Have]
+**User Story**: As a [user type], I want [capability] so that [benefit]
+**Acceptance Criteria**:
+
+- [Specific, testable criterion 1]
+- [Specific, testable criterion 2]
+- [Specific, testable criterion 3]
+  **Business Rationale**: [Why this feature is important]
+  **User Value**: [Specific benefit to users]
+  **Dependencies**: [Other features or systems required]
+  **Assumptions**: [Key assumptions this feature relies on]
+
+**Requirements:**
+
+- Clear, specific feature descriptions
+- User-centered story format
+- Testable acceptance criteria
+- Business justification for each feature
+- Explicit dependency mapping
+- Documented assumptions
+
+**Feature Categories to Consider:**
+
+- Core functionality (primary user workflows)
+- User management (registration, authentication, profiles)
+- Content management (creation, editing, organization)
+- Search and discovery (finding and filtering content)
+- Communication (messaging, notifications, sharing)
+- Analytics and reporting (insights and data visualization)
+- Administration (settings, configuration, management)
+- Integration (APIs, third-party connections)
+
+#### 2.2 User Interface Requirements
+
+**Template:**
+
+**Interface Type**: [Web, mobile, desktop, API]
+**Key Screens/Views**: [List of primary interface elements]
+**Navigation Requirements**: [How users move through the product]
+**Responsive Design**: [Multi-device support requirements]
+**Accessibility Standards**: [WCAG compliance level and specific requirements]
+**Branding Guidelines**: [Visual identity and style requirements]
+
+**Requirements:**
+
+- Comprehensive interface specification
+- Clear navigation and information architecture
+- Multi-device and responsive design requirements
+- Accessibility compliance standards
+- Brand consistency guidelines
+
+#### 2.3 Data Requirements
+
+**Template:**
+
+**Data Types**: [Categories of data the product will handle]
+**Data Sources**: [Where data comes from - user input, APIs, imports]
+**Data Storage**: [How data will be stored and organized]
+**Data Processing**: [How data will be manipulated and analyzed]
+**Data Export**: [How users can extract their data]
+**Data Retention**: [How long data is kept and archival policies]
+
+**Requirements:**
+
+- Complete data model specification
+- Clear data flow and processing requirements
+- User data ownership and portability
+- Data lifecycle management
+- Backup and recovery requirements
+
+### 3. Non-Functional Requirements
+
+#### 3.1 Performance Requirements
+
+**Template:**
+
+**Response Time**: [Maximum acceptable response times for key operations]
+**Throughput**: [Number of concurrent users or transactions supported]
+**Scalability**: [Growth capacity and scaling requirements]
+**Availability**: [Uptime requirements and acceptable downtime]
+**Resource Usage**: [Memory, CPU, storage, bandwidth constraints]
+
+**Specific Metrics Examples:**
+
+- Page load time: < 3 seconds on 3G connection
+- API response time: < 500ms for 95% of requests
+- Concurrent users: Support 10,000 simultaneous users
+- Uptime: 99.9% availability (8.76 hours downtime/year)
+- Database queries: < 100ms for 90% of queries
+
+#### 3.2 Security Requirements
+
+**Template:**
+
+**Authentication**: [User verification requirements]
+**Authorization**: [Access control and permission systems]
+**Data Protection**: [Encryption and data security measures]
+**Privacy**: [User privacy protection and data handling]
+**Compliance**: [Regulatory requirements - GDPR, HIPAA, etc.]
+**Audit**: [Logging and monitoring requirements]
+
+**Security Considerations:**
+
+- Multi-factor authentication options
+- Role-based access control (RBAC)
+- Data encryption at rest and in transit
+- Regular security audits and penetration testing
+- Incident response and breach notification procedures
+- User consent and data processing transparency
+
+#### 3.3 Usability Requirements
+
+**Template:**
+
+**Ease of Use**: [Learnability and efficiency requirements]
+**Error Prevention**: [How to prevent and handle user errors]
+**Help & Documentation**: [Support and guidance requirements]
+**Accessibility**: [Inclusive design requirements]
+**Internationalization**: [Multi-language and localization support]
+
+**Usability Metrics:**
+
+- Time to complete key tasks
+- Error rates and recovery time
+- User satisfaction scores
+- Accessibility compliance testing
+- Localization coverage and quality
+
+#### 3.4 Compatibility Requirements
+
+**Template:**
+
+**Browser Support**: [Supported browsers and versions]
+**Device Support**: [Supported devices and screen sizes]
+**Operating Systems**: [Supported OS versions]
+**Integration Requirements**: [Third-party system compatibility]
+**Legacy Support**: [Backward compatibility requirements]
+
+### 4. Business Requirements
+
+#### 4.1 Business Rules
+
+**Template:**
+
+**Rule**: [Business rule description]
+**Rationale**: [Why this rule exists]
+**Implementation**: [How the rule should be enforced]
+**Exceptions**: [When the rule doesn't apply]
+**Validation**: [How to verify rule compliance]
+
+**Business Rule Categories:**
+
+- User eligibility and access rules
+- Content approval and moderation policies
+- Pricing and billing rules
+- Data retention and deletion policies
+- Workflow and approval processes
+
+#### 4.2 Compliance Requirements
+
+**Template:**
+
+**Regulation**: [Specific regulation or standard]
+**Applicability**: [Which parts of the product are affected]
+**Requirements**: [Specific compliance requirements]
+**Implementation**: [How compliance will be achieved]
+**Validation**: [How compliance will be verified]
+**Documentation**: [Required compliance documentation]
+
+**Common Compliance Areas:**
+
+- Data privacy (GDPR, CCPA, PIPEDA)
+- Accessibility (ADA, WCAG, Section 508)
+- Industry-specific (HIPAA, SOX, PCI-DSS)
+- International standards (ISO 27001, SOC 2)
+
+### 5. Technical Requirements
+
+#### 5.1 Platform Requirements
+
+**Template:**
+
+**Architecture**: [High-level technical architecture]
+**Technology Stack**: [Programming languages, frameworks, databases]
+**Infrastructure**: [Hosting, cloud services, CDN requirements]
+**APIs**: [Required integrations and API specifications]
+**Development Tools**: [Required development and deployment tools]
+
+#### 5.2 Integration Requirements
+
+**Template:**
+
+**Integration**: [System or service to integrate with]
+**Purpose**: [Why integration is needed]
+**Data Exchange**: [What data is shared and how]
+**Authentication**: [How systems authenticate with each other]
+**Error Handling**: [How integration failures are managed]
+**Performance**: [Integration performance requirements]
+
+### 6. Requirement Prioritization
+
+#### 6.1 MoSCoW Prioritization
+
+**Template:**
+
+**Must-Have (Critical)**:
+
+- [Requirement 1]: [Rationale for critical priority]
+- [Requirement 2]: [Rationale for critical priority]
+
+**Should-Have (Important)**:
+
+- [Requirement 3]: [Rationale for important priority]
+- [Requirement 4]: [Rationale for important priority]
+
+**Could-Have (Nice-to-Have)**:
+
+- [Requirement 5]: [Rationale for nice-to-have priority]
+- [Requirement 6]: [Rationale for nice-to-have priority]
+
+**Won't-Have (Out of Scope)**:
+
+- [Requirement 7]: [Rationale for exclusion]
+- [Requirement 8]: [Rationale for exclusion]
+
+#### 6.2 Value vs. Effort Matrix
+
+**Template:**
+
+**High Value, Low Effort (Quick Wins)**:
+
+- [Requirements that provide maximum ROI]
+
+**High Value, High Effort (Major Projects)**:
+
+- [Requirements that are strategic but resource-intensive]
+
+**Low Value, Low Effort (Fill-ins)**:
+
+- [Requirements that are easy to implement]
+
+**Low Value, High Effort (Avoid)**:
+
+- [Requirements that should be deprioritized]
+
+### 7. Requirements Traceability
+
+**Template:**
+
+**Requirement ID**: [Unique identifier]
+**Source**: [User need, business objective, or constraint that drives this requirement]
+**Stakeholder**: [Who requested or benefits from this requirement]
+**Related Requirements**: [Dependencies and relationships]
+**Test Cases**: [How this requirement will be validated]
+**Implementation Status**: [Current development status]
+
+## Quality Criteria
+
+### Requirement Quality (SMART Criteria)
+
+- [ ] **Specific**: Clear, unambiguous description of what is required
+- [ ] **Measurable**: Quantifiable success criteria and acceptance tests
+- [ ] **Achievable**: Technically and practically feasible
+- [ ] **Relevant**: Aligned with user needs and business objectives
+- [ ] **Time-bound**: Clear timeline and milestone expectations
+
+### Additional Quality Checks
+
+- [ ] **Complete**: All necessary requirements identified
+- [ ] **Consistent**: No contradictory requirements
+- [ ] **Verifiable**: Can be tested and validated
+- [ ] **Traceable**: Clear connection to source needs
+- [ ] **Prioritized**: Clear importance ranking
+
+## Cross-Reference Requirements
+
+Ensure alignment with:
+
+- **User Research**: Requirements address identified user needs
+- **Product Overview**: Requirements support product vision and goals
+- **Technical Specifications**: Requirements are technically feasible
+- **Success Metrics**: Requirements support measurable outcomes
+- **Implementation Plan**: Requirements align with development capacity
+- **Risk Assessment**: Requirements consider identified risks
+
+## Information Gathering Questions
+
+If requirement details are missing, ask:
+
+### Functional Requirements
+
+1. What are the core user workflows and tasks?
+2. What features are absolutely essential vs. nice-to-have?
+3. How should users interact with the product?
+4. What data does the product need to collect and process?
+
+### Non-Functional Requirements
+
+5. What are the performance expectations?
+6. What security and privacy requirements exist?
+7. What devices and browsers must be supported?
+8. What accessibility requirements apply?
+
+### Business Requirements
+
+9. What business rules and policies must be enforced?
+10. What regulatory compliance is required?
+11. What are the budget and timeline constraints?
+12. What integrations are required?
+
+### Technical Requirements
+
+13. What technical constraints exist?
+14. What systems must the product integrate with?
+15. What scalability requirements exist?
+16. What development and deployment requirements apply?
+
+## Common Pitfalls to Avoid
+
+### Requirement Definition Pitfalls
+
+- **Vague requirements**: Using ambiguous language that can be interpreted multiple ways
+- **Solution-focused**: Describing how instead of what (requirements should be solution-agnostic)
+- **Unmeasurable criteria**: Acceptance criteria that can't be objectively tested
+- **Missing edge cases**: Failing to consider error conditions and unusual scenarios
+- **Scope creep**: Adding requirements without proper evaluation and prioritization
+
+### Prioritization Pitfalls
+
+- **Everything is high priority**: Failing to make difficult prioritization decisions
+- **Stakeholder bias**: Prioritizing based on who asks loudest rather than user value
+- **Technical bias**: Prioritizing easy-to-build over high-value features
+- **Feature factory**: Focusing on feature quantity over user outcomes
+- **Ignoring constraints**: Prioritizing without considering resource limitations
+
+## Edge Case Handling
+
+### Conflicting Requirements
+
+- Document the conflict clearly
+- Identify stakeholders affected by each option
+- Analyze trade-offs and implications
+- Propose compromise solutions
+- Escalate to decision-makers with recommendations
+
+### Uncertain Requirements
+
+- Mark requirements as assumptions
+- Plan for validation through prototyping or user testing
+- Create multiple requirement scenarios
+- Build in flexibility for requirement changes
+- Schedule regular requirement reviews
+
+### Technical Constraints
+
+- Work with technical teams to understand limitations
+- Explore alternative approaches to meet user needs
+- Consider phased implementation strategies
+- Document technical debt and future improvement plans
+- Balance ideal requirements with practical constraints
+
+### Regulatory Requirements
+
+- Consult with legal and compliance teams
+- Research applicable regulations thoroughly
+- Plan for regulatory approval processes
+- Consider international regulatory variations
+- Build compliance into core product design
+
+## Validation Checklist
+
+Before finalizing, verify:
+
+- [ ] **Completeness**: All necessary requirements identified
+- [ ] **Clarity**: Requirements are unambiguous and specific
+- [ ] **Testability**: Acceptance criteria are measurable
+- [ ] **Feasibility**: Requirements are technically achievable
+- [ ] **Traceability**: Requirements link to user needs and business goals
+- [ ] **Prioritization**: Requirements are properly ranked and justified
+
+## Output Format
+
+markdown
+
+# Product Requirements
+
+## Requirements Overview & Principles
+
+[Requirements philosophy and principles]
+
+## Functional Requirements
+
+### Core Features
+
+[Detailed feature requirements]
+
+### User Interface Requirements
+
+[UI/UX requirements]
+
+### Data Requirements
+
+[Data handling requirements]
+
+## Non-Functional Requirements
+
+### Performance Requirements
+
+[Performance specifications]
+
+### Security Requirements
+
+[Security and privacy requirements]
+
+### Usability Requirements
+
+[Usability and accessibility requirements]
+
+### Compatibility Requirements
+
+[Platform and integration requirements]
+
+## Business Requirements
+
+### Business Rules
+
+[Business logic and rules]
+
+### Compliance Requirements
+
+[Regulatory and compliance needs]
+
+## Technical Requirements
+
+### Platform Requirements
+
+[Technical architecture requirements]
+
+### Integration Requirements
+
+[System integration specifications]
+
+## Requirement Prioritization
+
+[Prioritized requirement lists]
+
+## Requirements Traceability
+
+[Requirement tracking and relationships]
+
+---
+
+_Requirements version: [Version number]_
+_Last updated: [Date]_
+_Next review: [Scheduled review date]_
+
+## Success Indicators
+
+Successful product requirements should:
+
+- Provide clear, actionable guidance for development teams
+- Enable accurate project estimation and planning
+- Support effective testing and quality assurance
+- Facilitate stakeholder alignment and decision-making
+- Serve as a contract between business and development teams
+```

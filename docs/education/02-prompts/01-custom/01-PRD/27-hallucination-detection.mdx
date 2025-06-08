@@ -1,0 +1,362 @@
+---
+title: Hallucination Detection
+description: Hallucination detection for the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Hallucination Detection and Fact-Checking Framework
+
+## Purpose
+
+Provide comprehensive framework for detecting and preventing hallucinated information in PRD development. This guide ensures all information is accurate, verifiable, and properly sourced.
+
+## Understanding AI Hallucination in PRD Context
+
+### What is Hallucination?
+
+AI hallucination occurs when AI systems generate information that appears plausible but is actually false, unsupported, or fabricated. In PRD context, this can include:
+
+- Invented market statistics or research data
+- Fabricated competitive information
+- Unrealistic technical specifications
+- Made-up user research insights
+- False regulatory or compliance claims
+
+### Why Hallucination is Dangerous in PRDs
+
+- **Business Risk**: Decisions based on false information can lead to failed products
+- **Resource Waste**: Incorrect estimates lead to budget and timeline overruns
+- **Credibility Loss**: Inaccurate PRDs damage professional credibility
+- **Legal Risk**: False compliance claims can create legal liability
+- **Strategic Misalignment**: Wrong market data leads to poor strategic decisions
+
+## Hallucination Detection Framework
+
+### 1. Information Source Verification
+
+**Red Flags for Fabricated Sources:**
+
+- Overly specific statistics without clear sources
+- Round numbers that seem too convenient (exactly 50%, 75%, etc.)
+- Market research from unknown or unverifiable sources
+- Competitive data that seems too detailed or insider-like
+- Technical specifications that seem too good to be true
+
+**Verification Process:**
+
+## Source Verification Checklist
+
+### For Market Data:
+
+- [ ] Source is a recognized research firm (Gartner, IDC, Forrester, etc.)
+- [ ] Publication date is recent (within 2 years for market data)
+- [ ] Methodology is described or available
+- [ ] Data is consistent with other credible sources
+- [ ] Sample size and scope are appropriate
+
+### For Competitive Information:
+
+- [ ] Information is from public sources (websites, press releases, etc.)
+- [ ] Claims are verifiable through multiple sources
+- [ ] Information is current and not outdated
+- [ ] No insider or confidential information is claimed
+- [ ] Competitive analysis is objective, not biased
+
+### For Technical Information:
+
+- [ ] Technical specifications are realistic and achievable
+- [ ] Performance claims are backed by benchmarks or tests
+- [ ] Technology choices are appropriate for use case
+- [ ] Integration capabilities are verified with vendors
+- [ ] Security claims are validated against standards
+
+### For User Research:
+
+- [ ] Research methodology is clearly described
+- [ ] Sample sizes are adequate for conclusions drawn
+- [ ] Research is recent and relevant to target users
+- [ ] Findings are consistent with known user behavior
+- [ ] Quotes and insights feel authentic, not fabricated
+
+### 2. Plausibility Assessment
+
+**Market Data Plausibility:**
+
+- Market size claims should be reasonable relative to related markets
+- Growth rates should align with industry trends
+- Market penetration assumptions should be conservative
+- Revenue projections should be based on realistic adoption curves
+
+**Technical Plausibility:**
+
+- Performance specifications should align with current technology capabilities
+- Development timelines should account for complexity and unknowns
+- Integration requirements should be technically feasible
+- Scalability claims should be supported by architecture analysis
+
+**User Behavior Plausibility:**
+
+- User adoption rates should align with similar products
+- User engagement patterns should be realistic
+- User satisfaction targets should be achievable
+- User workflow assumptions should match real-world behavior
+
+### 3. Consistency Checking
+
+**Cross-Section Consistency:**
+
+## Consistency Validation Framework
+
+### Market and User Consistency:
+
+- [ ] Target market size aligns with user persona populations
+- [ ] Market trends support user needs and behaviors
+- [ ] Competitive landscape matches user alternatives
+- [ ] Market opportunity justifies user acquisition costs
+
+### Technical and Functional Consistency:
+
+- [ ] Technical architecture supports all functional requirements
+- [ ] Performance requirements are achievable with proposed architecture
+- [ ] Integration requirements are technically feasible
+- [ ] Security requirements align with technical capabilities
+
+### Business and Financial Consistency:
+
+- [ ] Revenue projections align with user adoption estimates
+- [ ] Cost estimates align with technical and team requirements
+- [ ] Timeline estimates align with scope and complexity
+- [ ] Resource requirements support timeline and scope
+
+### User and Product Consistency:
+
+- [ ] Product features address identified user needs
+- [ ] User experience requirements align with user capabilities
+- [ ] Success metrics reflect real user value
+- [ ] User journey maps match product functionality
+
+## Fact-Checking Protocols
+
+### 1. Market Information Validation
+
+**Required Verification:**
+
+- **Market Size**: Verify through multiple credible sources
+- **Growth Rates**: Cross-check with industry reports
+- **Competitive Data**: Validate through public information
+- **Regulatory Information**: Confirm with legal/compliance experts
+
+**Validation Template:**
+
+## Market Fact Check: [Claim]
+
+### Original Claim:
+
+[Exact claim being verified]
+
+### Source Verification:
+
+**Primary Source**: [Original source of information]
+**Source Credibility**: [Assessment of source reliability]
+**Publication Date**: [When information was published]
+**Methodology**: [How data was collected]
+
+### Cross-Verification:
+
+**Source 2**: [Second source confirming information]
+**Source 3**: [Third source confirming information]
+**Discrepancies**: [Any differences between sources]
+
+### Plausibility Assessment:
+
+[Whether claim seems reasonable given context]
+
+### Verification Status:
+
+- [ ] Verified through multiple credible sources
+- [ ] Partially verified (some sources confirm)
+- [ ] Unverified (cannot find supporting sources)
+- [ ] Contradicted (sources disagree with claim)
+
+### Action Required:
+
+[What needs to be done based on verification results]
+
+### 2. Technical Information Validation
+
+**Technical Validation Process:**
+
+1. **Expert Review**: Have technical experts review all technical claims
+2. **Proof of Concept**: Validate critical technical assumptions through prototyping
+3. **Vendor Confirmation**: Confirm integration and third-party capabilities
+4. **Benchmark Research**: Validate performance claims against industry benchmarks
+
+### 3. User Research Validation
+
+**User Research Verification:**
+
+- **Methodology Review**: Ensure research methods are appropriate
+- **Sample Validation**: Confirm sample sizes and demographics
+- **Bias Assessment**: Check for research bias or leading questions
+- **Triangulation**: Validate findings through multiple research methods
+
+## Common Hallucination Patterns
+
+### 1. Market Data Hallucinations
+
+**Common Patterns:**
+
+- Overly precise market size figures (e.g., "$47.3 billion market")
+- Unrealistic growth rates (e.g., "300% annual growth")
+- Convenient round numbers (e.g., "exactly 50% of users want this feature")
+- Unattributed statistics (e.g., "studies show that...")
+
+**Detection Strategies:**
+
+- Require specific sources for all market data
+- Cross-check statistics with multiple sources
+- Verify that growth rates align with industry trends
+- Question statistics that seem too convenient or precise
+
+### 2. Competitive Intelligence Hallucinations
+
+**Common Patterns:**
+
+- Detailed competitive feature comparisons without public sources
+- Insider knowledge about competitor strategies
+- Unverified claims about competitor performance or metrics
+- Outdated competitive information presented as current
+
+**Detection Strategies:**
+
+- Limit competitive analysis to publicly available information
+- Verify all competitive claims through multiple sources
+- Date-stamp all competitive information
+- Acknowledge limitations in competitive intelligence
+
+### 3. Technical Specification Hallucinations
+
+**Common Patterns:**
+
+- Performance specifications that exceed industry standards
+- Integration capabilities that haven't been verified
+- Development timelines that ignore complexity
+- Security claims without proper validation
+
+**Detection Strategies:**
+
+- Have technical experts review all specifications
+- Validate performance claims through benchmarking
+- Confirm integration capabilities with vendors
+- Base timelines on similar project experience
+
+## Assumption Management Framework
+
+### 1. Assumption Identification
+
+**Types of Assumptions:**
+
+- **Market Assumptions**: About market size, growth, and behavior
+- **User Assumptions**: About user needs, behaviors, and adoption
+- **Technical Assumptions**: About feasibility, performance, and integration
+- **Business Assumptions**: About revenue, costs, and resources
+
+**Assumption Documentation:**
+
+## Assumption: [Clear statement of assumption]
+
+### Category: [Market/User/Technical/Business]
+
+### Confidence Level: [High/Medium/Low]
+
+### Impact if Wrong: [High/Medium/Low]
+
+### Evidence Supporting: [What evidence supports this assumption]
+
+### Evidence Against: [What evidence challenges this assumption]
+
+### Validation Method: [How assumption will be tested]
+
+### Validation Timeline: [When validation will occur]
+
+### Contingency Plan: [What to do if assumption is wrong]
+
+### Owner: [Who is responsible for validating this assumption]
+
+### 2. Assumption Validation Planning
+
+**Validation Methods:**
+
+- **User Research**: Surveys, interviews, usability testing
+- **Market Research**: Industry reports, competitive analysis
+- **Technical Validation**: Prototyping, proof of concepts, expert consultation
+- **Business Validation**: Financial modeling, stakeholder interviews
+
+### 3. Assumption Tracking and Updates
+
+**Tracking Framework:**
+
+- Regular assumption review meetings
+- Assumption validation status tracking
+- Updates to PRD based on validated/invalidated assumptions
+- Communication of assumption changes to stakeholders
+
+## Quality Assurance Checklist
+
+### Pre-Publication Validation:
+
+- [ ] All market data has credible sources
+- [ ] All competitive information is publicly verifiable
+- [ ] All technical specifications have been expert-reviewed
+- [ ] All user research has appropriate methodology
+- [ ] All financial projections have supporting models
+- [ ] All assumptions are clearly marked and documented
+- [ ] All claims are consistent across sections
+- [ ] All sources are current and relevant
+
+### Ongoing Validation:
+
+- [ ] Regular fact-checking reviews scheduled
+- [ ] Assumption validation plan in place
+- [ ] Stakeholder review process includes fact-checking
+- [ ] Updates to PRD reflect new validated information
+- [ ] Team trained on hallucination detection
+
+## Red Flag Indicators
+
+### Immediate Red Flags:
+
+- Statistics without sources
+- Overly precise or convenient numbers
+- Claims that seem too good to be true
+- Competitive intelligence that seems insider-like
+- Technical specifications that exceed industry norms
+- User research with unrealistic sample sizes or findings
+
+### Process Red Flags:
+
+- Pressure to include unverified information
+- Reluctance to document assumptions
+- Skipping fact-checking due to time pressure
+- Over-reliance on single sources
+- Dismissing contradictory evidence
+
+## Remediation Process
+
+### When Hallucination is Detected:
+
+1. **Stop and Assess**: Immediately stop using the questionable information
+2. **Investigate Scope**: Determine how much content may be affected
+3. **Find Accurate Information**: Research and verify correct information
+4. **Update Documentation**: Correct all affected sections
+5. **Review Process**: Understand how hallucination occurred
+6. **Prevent Recurrence**: Implement additional safeguards
+
+### Communication Protocol:
+
+- Notify stakeholders of any significant corrections
+- Explain impact of corrections on conclusions
+- Update version control with clear change documentation
+- Conduct lessons learned session to prevent future occurrences
+```

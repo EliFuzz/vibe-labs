@@ -1,0 +1,351 @@
+---
+title: Overview
+description: Overview of the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Comprehensive PRD (Product Requirements Document) Solution
+
+## Quick Start Guide
+
+### Step 1: Initial Setup
+
+1. Choose your AI assistant (Claude, GPT-4, Gemini, etc.)
+2. Start with the **Master PRD Orchestrator** prompt
+3. Gather initial product information using the pre-generation questionnaire
+
+### Step 2: Section Generation
+
+1. Use section-specific prompts in the recommended order:
+   - Executive Summary (last, after all other sections)
+   - Product Overview
+   - Market Analysis
+   - User Research & Personas
+   - Product Requirements
+   - Technical Specifications
+   - UX Design
+   - Implementation Plan
+
+### Step 3: Quality Assurance
+
+1. Use the Quality Assurance prompt to validate the complete PRD
+2. Address any identified issues or gaps
+3. Iterate until quality standards are met
+
+### Step 4: Final Integration
+
+1. Combine all sections into a cohesive document
+2. Ensure consistent formatting and cross-references
+3. Prepare for stakeholder review and approval
+
+## Detailed Usage Instructions
+
+### Using the Master Orchestrator
+
+The **Master PRD Orchestrator** (`master_prd_orchestrator.md`) should be your starting point. It:
+
+- Guides you through initial requirements gathering
+- Provides a comprehensive questionnaire covering all aspects
+- Defines the sequence for using section-specific prompts
+- Includes quality gates and validation checkpoints
+- Handles edge cases and incomplete information
+
+**Best Practices:**
+
+- Complete the pre-generation questionnaire thoroughly
+- Don't skip sections even if information seems limited
+- Use the fallback strategies for incomplete information
+- Follow the recommended section sequence
+
+### Section-Specific Prompt Usage
+
+Each section prompt is designed to be used independently but builds on information from previous sections:
+
+#### 1. Product Overview (`product_overview_prompt.md`)
+
+- **Use when**: You have basic product concept and business objectives
+- **Requires**: Product idea, target market, basic value proposition
+- **Outputs**: Product vision, value proposition, success metrics
+- **Next step**: Market Analysis
+
+#### 2. Market Analysis (`market_analysis_prompt.md`)
+
+- **Use when**: You need comprehensive market research and competitive analysis
+- **Requires**: Target market definition, competitive landscape awareness
+- **Outputs**: Market sizing, competitive analysis, market entry strategy
+- **Next step**: User Research
+
+#### 3. User Research & Personas (`user_research_prompt.md`)
+
+- **Use when**: You need to understand users and create detailed personas
+- **Requires**: Target user segments, user research data or methodology
+- **Outputs**: User personas, journey maps, needs analysis
+- **Next step**: Product Requirements
+
+#### 4. Product Requirements (`product_requirements_prompt.md`)
+
+- **Use when**: You need to define specific product features and capabilities
+- **Requires**: User needs, business objectives, technical constraints
+- **Outputs**: Functional requirements, non-functional requirements, prioritization
+- **Next step**: Technical Specifications
+
+#### 5. Technical Specifications (`technical_specs_prompt.md`)
+
+- **Use when**: You need detailed technical architecture and implementation guidance
+- **Requires**: Product requirements, technical constraints, team capabilities
+- **Outputs**: System architecture, technology stack, technical requirements
+- **Next step**: UX Design
+
+#### 6. UX Design (`ux_design_prompt.md`)
+
+- **Use when**: You need comprehensive user experience design guidelines
+- **Requires**: User research, product requirements, technical constraints
+- **Outputs**: Design system, user flows, interaction patterns
+- **Next step**: Implementation Plan
+
+#### 7. Implementation Plan (`implementation_plan_prompt.md`)
+
+- **Use when**: You need detailed development and launch planning
+- **Requires**: All previous sections, team composition, resource constraints
+- **Outputs**: Project timeline, resource allocation, risk management
+- **Next step**: Executive Summary
+
+#### 8. Executive Summary (`executive_summary_prompt.md`)
+
+- **Use when**: All other sections are complete and you need a compelling summary
+- **Requires**: All completed PRD sections
+- **Outputs**: Concise executive overview, business case, key highlights
+- **Next step**: Quality Assurance
+
+### Quality Assurance Process
+
+The **Quality Assurance prompt** (`quality_assurance_prompt.md`) provides comprehensive validation:
+
+#### What It Checks:
+
+- **Completeness**: All required sections and information present
+- **Consistency**: Information aligns across sections without contradictions
+- **Feasibility**: Requirements and plans are realistic and achievable
+- **Quality**: Content meets professional standards and best practices
+- **Accuracy**: Information is factual and free from hallucinations
+- **Clarity**: Content is clear, specific, and actionable
+
+#### How to Use:
+
+1. Run the QA prompt after completing all sections
+2. Review the generated quality assessment report
+3. Address critical issues immediately
+4. Implement recommended improvements
+5. Re-run QA validation if significant changes were made
+
+#### Quality Thresholds:
+
+- **25-30/30**: Excellent - Ready for stakeholder review
+- **20-24/30**: Good - Minor improvements needed
+- **15-19/30**: Fair - Significant improvements required
+- **10-14/30**: Poor - Major revisions needed
+- **Below 10/30**: Unacceptable - Requires substantial rework
+
+## AI Platform Compatibility
+
+This prompt system is designed to work across different AI platforms:
+
+### Tested Platforms:
+
+- **Claude (Anthropic)**: Excellent performance, handles complex instructions well
+- **GPT-4 (OpenAI)**: Strong performance, good at following structured prompts
+- **Gemini (Google)**: Good performance, effective for research-heavy sections
+- **Other LLMs**: Should work with any sufficiently capable language model
+
+### Platform-Specific Tips:
+
+#### For Claude:
+
+- Excellent at following complex, structured prompts
+- Strong at maintaining consistency across sections
+- Good at identifying potential issues and hallucinations
+
+#### For GPT-4:
+
+- Works well with clear, specific instructions
+- May need reminders about cross-section consistency
+- Strong at creative problem-solving and edge cases
+
+#### For Gemini:
+
+- Excellent for research and market analysis sections
+- Good at factual accuracy and source validation
+- May need guidance on maintaining consistent tone
+
+## Best Practices
+
+### Information Gathering
+
+- **Be Thorough**: Complete questionnaires fully, even if some information is uncertain
+- **Use Real Data**: Provide actual market research, user feedback, and business data when available
+- **Document Sources**: Keep track of information sources for validation and updates
+- **Iterate**: Don't expect perfection on the first pass - plan for multiple iterations
+
+### Section Development
+
+- **Follow Sequence**: Use sections in the recommended order for best results
+- **Cross-Reference**: Regularly check that new sections align with previous ones
+- **Validate Assumptions**: Question and verify any assumptions made by the AI
+- **Maintain Focus**: Keep each section focused on its specific purpose and scope
+
+### Quality Management
+
+- **Regular Validation**: Run quality checks after completing each major section
+- **Address Issues Early**: Fix problems as they're identified rather than waiting
+- **Stakeholder Review**: Get feedback from relevant stakeholders during development
+- **Version Control**: Keep track of changes and iterations
+
+### Common Pitfalls to Avoid
+
+- **Information Overload**: Don't try to include everything - focus on what's essential
+- **Inconsistent Detail**: Maintain similar levels of detail across sections
+- **Assumption Creep**: Regularly validate that AI isn't making unsupported assumptions
+- **Generic Content**: Push for specific, actionable content rather than generic advice
+
+## Advanced Usage
+
+### Customization Options
+
+#### Industry-Specific Adaptations
+
+- **B2B Software**: Emphasize enterprise requirements, compliance, integration needs
+- **Consumer Apps**: Focus on user experience, engagement, viral growth
+- **E-commerce**: Highlight conversion optimization, payment systems, inventory
+- **Healthcare**: Emphasize compliance, privacy, clinical workflows
+- **Fintech**: Focus on security, regulatory compliance, financial integrations
+
+#### Company Size Adaptations
+
+- **Startup**: Emphasize MVP approach, resource constraints, rapid iteration
+- **Scale-up**: Focus on growth planning, team scaling, market expansion
+- **Enterprise**: Emphasize integration, compliance, change management
+
+#### Project Type Adaptations
+
+- **New Product**: Full comprehensive approach using all sections
+- **Feature Addition**: Focus on relevant sections (requirements, UX, implementation)
+- **Platform Migration**: Emphasize technical specifications and implementation planning
+- **Market Expansion**: Focus on market analysis and go-to-market strategy
+
+### Integration with Existing Processes
+
+#### Agile Development
+
+- Use PRD as epic-level documentation
+- Break implementation plan into sprint-sized chunks
+- Regular validation against user stories and acceptance criteria
+
+#### Design Thinking
+
+- Use user research section to capture empathy and define phases
+- Product requirements capture ideation outcomes
+- Implementation plan covers prototype and test phases
+
+#### Lean Startup
+
+- Focus on MVP definition and hypothesis validation
+- Emphasize metrics and learning objectives
+- Plan for rapid iteration and pivot scenarios
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+#### "AI is generating generic content"
+
+**Solution**: Provide more specific context and examples. Use follow-up prompts to drill down into details.
+
+#### "Sections are inconsistent with each other"
+
+**Solution**: Use the cross-reference validation in each prompt. Run quality assurance more frequently.
+
+#### "Technical specifications seem unrealistic"
+
+**Solution**: Validate technical assumptions with your development team. Provide more context about technical constraints.
+
+#### "Market analysis contains questionable data"
+
+**Solution**: Fact-check all market data. Provide specific, credible sources. Use the hallucination detection guidelines.
+
+#### "Implementation timeline seems too optimistic"
+
+**Solution**: Provide more detail about team capabilities and constraints. Include buffer time and risk factors.
+
+### Getting Better Results
+
+#### Provide Context
+
+- Share relevant background information
+- Explain constraints and limitations
+- Describe your team and organizational context
+
+#### Be Specific
+
+- Ask for specific examples and details
+- Request quantified metrics and targets
+- Specify format and length requirements
+
+#### Iterate and Refine
+
+- Don't accept first drafts as final
+- Ask follow-up questions for clarification
+- Request alternative approaches when needed
+
+#### Validate and Verify
+
+- Cross-check facts and figures
+- Validate technical feasibility with experts
+- Test assumptions with real users when possible
+
+## Example Workflows
+
+### Workflow 1: New Product Development
+
+1. **Week 1**: Master orchestrator + Product overview + Market analysis
+2. **Week 2**: User research + Product requirements
+3. **Week 3**: Technical specifications + UX design
+4. **Week 4**: Implementation plan + Executive summary + QA validation
+5. **Week 5**: Stakeholder review and refinement
+
+### Workflow 2: Feature Enhancement
+
+1. **Day 1**: Relevant sections from existing PRD + Updated requirements
+2. **Day 2**: UX design updates + Technical specification changes
+3. **Day 3**: Implementation plan updates + QA validation
+4. **Day 4**: Stakeholder review and approval
+
+### Workflow 3: Market Expansion
+
+1. **Week 1**: Market analysis for new market + User research updates
+2. **Week 2**: Product requirements adaptation + UX localization
+3. **Week 3**: Implementation plan for expansion + QA validation
+
+## Support and Maintenance
+
+### Keeping Prompts Updated
+
+- Review prompts quarterly for relevance and effectiveness
+- Update based on new best practices and methodologies
+- Incorporate feedback from users and stakeholders
+- Adapt to new AI capabilities and limitations
+
+### Version Control
+
+- Track changes to prompt files
+- Document rationale for major updates
+- Maintain backward compatibility when possible
+- Test updates before deploying to teams
+
+### Training and Adoption
+
+- Provide training on prompt system usage
+- Create examples and case studies
+- Establish centers of excellence for PRD development
+- Share best practices and lessons learned
+```

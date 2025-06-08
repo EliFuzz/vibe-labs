@@ -1,0 +1,421 @@
+---
+title: Success Metrics
+description: Success metrics of the PRD
+hide_table_of_contents: true
+---
+
+```markdown
+# Success Metrics & KPIs
+
+## Purpose
+
+Define comprehensive measurement framework that tracks product success across business, user, and technical dimensions. This section establishes how success will be measured, monitored, and optimized.
+
+## Prerequisites
+
+- Business objectives clearly defined
+- User personas and success criteria established
+- Functional and technical requirements completed
+- SRE framework and SLI/SLO requirements established
+- Performance engineering requirements defined
+- UX requirements and usability goals defined
+
+## Section Structure & Requirements
+
+### 1. Measurement Framework
+
+**Objective**: Establish overall approach to measuring success
+
+**Required Elements:**
+
+- **Measurement Philosophy**: Approach to metrics and measurement
+- **Metric Categories**: How metrics are organized and categorized
+- **Measurement Cadence**: How often metrics are reviewed and reported
+- **Accountability Framework**: Who is responsible for each metric
+- **Data Collection Strategy**: How metrics data will be collected and validated
+
+**Quality Criteria:**
+
+- Framework is comprehensive yet focused
+- Metrics align with business objectives and user needs
+- Measurement approach is sustainable and actionable
+- Accountability is clear and appropriate
+
+**Template:**
+
+## Measurement Framework
+
+### Measurement Philosophy
+
+[Approach to metrics and measurement]
+
+### Metric Categories
+
+- **Business Metrics**: [Revenue, growth, market share, etc.]
+- **User Metrics**: [Engagement, satisfaction, retention, etc.]
+- **Product Metrics**: [Usage, adoption, performance, etc.]
+- **SRE Metrics**: [SLI/SLO compliance, error budgets, reliability, etc.]
+- **Performance Metrics**: [Latency, throughput, capacity, efficiency, etc.]
+- **Technical Metrics**: [Performance, reliability, security, etc.]
+
+### Measurement Cadence
+
+- **Daily Metrics**: [Metrics reviewed daily]
+- **Weekly Metrics**: [Metrics reviewed weekly]
+- **Monthly Metrics**: [Metrics reviewed monthly]
+- **Quarterly Metrics**: [Metrics reviewed quarterly]
+
+### Accountability Framework
+
+[Who is responsible for each metric category]
+
+### Data Collection Strategy
+
+[How metrics data will be collected and validated]
+
+### 2. Business Success Metrics
+
+**Objective**: Define metrics that measure business value and impact
+
+**Required Elements:**
+
+- **Revenue Metrics**: Direct and indirect revenue impact
+- **Growth Metrics**: User acquisition, market expansion, product adoption
+- **Efficiency Metrics**: Cost reduction, process improvement, productivity gains
+- **Market Metrics**: Market share, competitive positioning, brand impact
+- **ROI Metrics**: Return on investment and payback period
+
+**Quality Criteria:**
+
+- Metrics directly tie to business objectives
+- Targets are ambitious yet achievable
+- Metrics can be influenced by product decisions
+- Baseline and benchmark data is available or obtainable
+
+**Template:**
+
+## Business Success Metrics
+
+### Revenue Metrics
+
+- **[Metric Name]**: [Definition, target, measurement method]
+- **[Metric Name]**: [Definition, target, measurement method]
+
+### Growth Metrics
+
+- **[Metric Name]**: [Definition, target, measurement method]
+- **[Metric Name]**: [Definition, target, measurement method]
+
+### Efficiency Metrics
+
+- **[Metric Name]**: [Definition, target, measurement method]
+- **[Metric Name]**: [Definition, target, measurement method]
+
+### Market Metrics
+
+- **[Metric Name]**: [Definition, target, measurement method]
+- **[Metric Name]**: [Definition, target, measurement method]
+
+### ROI Metrics
+
+- **[Metric Name]**: [Definition, target, measurement method]
+- **[Metric Name]**: [Definition, target, measurement method]
+
+### 2.1. SRE & Reliability Metrics
+
+**Objective**: Define metrics that measure system reliability and SRE effectiveness
+
+**Required Elements:**
+
+- **Service Level Indicators (SLIs)**: Metrics that measure service performance
+- **Service Level Objectives (SLOs)**: Target values for SLIs
+- **Error Budget Metrics**: How error budgets are tracked and consumed
+- **Toil Metrics**: Measurement of operational toil and automation progress
+- **Incident Metrics**: Metrics related to incident frequency and resolution
+
+**Template:**
+
+## SRE & Reliability Metrics
+
+### Service Level Indicators (SLIs)
+
+- **Availability SLI**: [% of successful requests over time window]
+- **Latency SLI**: [95th percentile response time]
+- **Throughput SLI**: [Requests per second capacity]
+- **Quality SLI**: [% of requests returning correct results]
+
+### Service Level Objectives (SLOs)
+
+- **Availability SLO**: [99.9% availability over 30-day window]
+- **Latency SLO**: [95th percentile < 200ms over 30-day window]
+- **Throughput SLO**: [Handle 10,000 RPS sustained load]
+
+### Error Budget Metrics
+
+- **Error Budget Remaining**: [% of error budget remaining]
+- **Error Budget Burn Rate**: [Rate of error budget consumption]
+- **Error Budget Alerts**: [Alerts when error budget is at risk]
+
+### Toil Metrics
+
+- **Toil Percentage**: [% of time spent on toil vs. engineering work]
+- **Automation Coverage**: [% of operational tasks automated]
+- **Manual Intervention Rate**: [Frequency of manual interventions]
+
+### Incident Metrics
+
+- **Mean Time to Detection (MTTD)**: [Time to detect incidents]
+- **Mean Time to Resolution (MTTR)**: [Time to resolve incidents]
+- **Incident Frequency**: [Number of incidents per time period]
+
+### 3. User Success Metrics
+
+**Objective**: Define metrics that measure user value and satisfaction
+
+**Required Elements:**
+
+- **Adoption Metrics**: How users discover and start using the product
+- **Engagement Metrics**: How actively users engage with the product
+- **Retention Metrics**: How well the product retains users over time
+- **Satisfaction Metrics**: How satisfied users are with the product
+- **Value Realization Metrics**: How well users achieve their goals
+
+**Quality Criteria:**
+
+- Metrics reflect real user value and satisfaction
+- Metrics can be tracked across user segments
+- Targets are based on user research and benchmarks
+- Metrics predict long-term user success
+
+**Template:**
+
+## User Success Metrics
+
+### Adoption Metrics
+
+- **User Acquisition Rate**: [New users per period]
+- **Activation Rate**: [% of users who complete key onboarding actions]
+- **Time to First Value**: [Time until user achieves first success]
+
+### Engagement Metrics
+
+- **Daily/Weekly/Monthly Active Users**: [Active user counts]
+- **Session Duration**: [Average time spent per session]
+- **Feature Adoption**: [% of users using key features]
+- **User Actions per Session**: [Average actions per session]
+
+### Retention Metrics
+
+- **User Retention Rate**: [% of users returning after X days/weeks/months]
+- **Churn Rate**: [% of users who stop using product]
+- **Cohort Retention**: [Retention by user cohort]
+
+### Satisfaction Metrics
+
+- **Net Promoter Score (NPS)**: [User recommendation likelihood]
+- **Customer Satisfaction (CSAT)**: [User satisfaction ratings]
+- **User Effort Score (UES)**: [Ease of use ratings]
+
+### Value Realization Metrics
+
+- **Goal Completion Rate**: [% of users achieving their goals]
+- **Task Success Rate**: [% of tasks completed successfully]
+- **Time to Goal Achievement**: [Time to achieve user goals]
+
+### 4. Product Performance Metrics
+
+**Objective**: Define metrics that measure product quality and performance
+
+**Required Elements:**
+
+- **Usage Metrics**: How the product is being used
+- **Performance Metrics**: Technical performance and reliability
+- **Quality Metrics**: Bugs, errors, and quality issues
+- **Feature Metrics**: Individual feature performance and adoption
+- **Content Metrics**: Content effectiveness and engagement
+
+**Template:**
+
+## Product Performance Metrics
+
+### Usage Metrics
+
+- **Feature Usage**: [Usage rates for key features]
+- **User Flows**: [Completion rates for key user flows]
+- **Content Consumption**: [Content views, downloads, shares]
+
+### Performance Metrics
+
+- **Page Load Time**: [Average page load times]
+- **API Response Time**: [Average API response times]
+- **Uptime**: [System availability percentage]
+- **Error Rate**: [Error rate for key operations]
+
+### Quality Metrics
+
+- **Bug Report Rate**: [Bugs reported per user/session]
+- **Crash Rate**: [Application crash frequency]
+- **Support Ticket Volume**: [Support requests per user]
+
+### Feature Metrics
+
+- **Feature Adoption Rate**: [% of users adopting new features]
+- **Feature Retention**: [Continued usage of features over time]
+- **Feature Satisfaction**: [User satisfaction with specific features]
+
+### 5. Leading and Lagging Indicators
+
+**Objective**: Balance predictive and outcome metrics
+
+**Required Elements:**
+
+- **Leading Indicators**: Metrics that predict future success
+- **Lagging Indicators**: Metrics that measure achieved outcomes
+- **Correlation Analysis**: How leading indicators relate to outcomes
+- **Early Warning Signals**: Metrics that indicate potential problems
+- **Predictive Models**: How metrics are used to predict future performance
+
+### 6. Measurement Implementation
+
+**Objective**: Define how metrics will be implemented and managed
+
+**Required Elements:**
+
+- **Data Collection Requirements**: What data needs to be collected
+- **Analytics Implementation**: Tools and systems for measurement
+- **Reporting Framework**: How metrics are reported and visualized
+- **Alert Systems**: When and how stakeholders are notified of issues
+- **Metric Evolution**: How metrics will evolve as product matures
+
+**Template:**
+
+## Measurement Implementation
+
+### Data Collection Requirements
+
+[What data needs to be collected and how]
+
+### Analytics Implementation
+
+- **Analytics Tools**: [Google Analytics, Mixpanel, custom analytics, etc.]
+- **Data Warehouse**: [Where data is stored and processed]
+- **Real-time vs Batch**: [Which metrics are real-time vs batch processed]
+
+### Reporting Framework
+
+- **Dashboards**: [Key dashboards and their audiences]
+- **Reports**: [Regular reports and their frequency]
+- **Visualization**: [How metrics are visualized and presented]
+
+### Alert Systems
+
+[When and how stakeholders are notified of issues]
+
+### Metric Evolution
+
+[How metrics will evolve as product matures]
+
+## Information Gathering Requirements
+
+### Metrics Context Needed:
+
+- Business objectives and success criteria
+- User research insights and success definitions
+- Current baseline metrics and benchmarks
+- Competitive metrics and industry standards
+- Technical capabilities for data collection
+
+### Validation Requirements:
+
+- Stakeholder alignment on metric definitions and targets
+- Technical validation of measurement feasibility
+- User research validation of success definitions
+- Benchmark analysis for target setting
+
+## Cross-Reference Requirements
+
+### Must Reference:
+
+- Business objectives and success criteria
+- User personas and their success definitions
+- Functional requirements and feature priorities
+- Technical capabilities and constraints
+
+### Must Support:
+
+- Product optimization and iteration decisions
+- Business reporting and stakeholder communication
+- User research and validation activities
+- Technical monitoring and alerting
+
+## Common Pitfalls to Avoid
+
+### Metric Selection Pitfalls:
+
+- **Vanity metrics**: Choosing metrics that look good but don't drive decisions
+- **Too many metrics**: Tracking everything instead of focusing on what matters
+- **Lagging indicators only**: Not having predictive metrics
+- **Metric gaming**: Creating metrics that can be easily manipulated
+
+### Target Setting Pitfalls:
+
+- **Unrealistic targets**: Setting impossible goals that demotivate teams
+- **No baseline**: Setting targets without understanding current performance
+- **Static targets**: Not adjusting targets as you learn and grow
+- **Conflicting targets**: Setting targets that work against each other
+
+### Implementation Pitfalls:
+
+- **Data quality issues**: Not ensuring data accuracy and reliability
+- **Measurement overhead**: Making measurement too complex or expensive
+- **Delayed implementation**: Not implementing measurement from launch
+- **No action framework**: Collecting metrics but not acting on insights
+
+## Edge Case Considerations
+
+### When Baseline Data is Unavailable:
+
+- Use industry benchmarks and competitive analysis
+- Plan rapid baseline establishment after launch
+- Use proxy metrics until direct measurement is possible
+- Document assumptions and validation plans
+
+### When User Privacy Limits Measurement:
+
+- Focus on aggregate and anonymized metrics
+- Use privacy-preserving measurement techniques
+- Balance measurement needs with privacy requirements
+- Plan for evolving privacy regulations
+
+### When Technical Constraints Limit Measurement:
+
+- Prioritize most critical metrics for initial implementation
+- Plan measurement infrastructure improvements
+- Use sampling and estimation techniques
+- Document measurement limitations and their impact
+
+## Validation Checkpoints
+
+### Before Finalizing Section:
+
+- [ ] Metrics align with business objectives and user needs
+- [ ] Targets are realistic and based on research/benchmarks
+- [ ] Measurement approach is technically feasible
+- [ ] Leading and lagging indicators are balanced
+- [ ] Implementation plan is detailed and actionable
+
+### Cross-Section Validation:
+
+- [ ] Metrics support product vision and strategy
+- [ ] Success definitions align with user research
+- [ ] Measurement requirements fit technical architecture
+- [ ] Reporting framework supports decision-making needs
+
+## Output Quality Standards
+
+- Metrics are specific, measurable, and actionable
+- Targets are ambitious yet achievable
+- Implementation plan is detailed and feasible
+- Framework balances different stakeholder needs
+- Content enables effective measurement and optimization
+```
