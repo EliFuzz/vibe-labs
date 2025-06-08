@@ -4,4 +4,233 @@ description: Model Context Protocol
 hide_table_of_contents: true
 ---
 
-# Model Context Protocol
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+# Model Context Protocol (MCP)
+
+<Tabs queryString="primary">
+  <TabItem value="overview" label="Overview">
+    ```mermaid
+    graph TD
+        subgraph User Interaction
+            A(User) -->|"Plan a full trip<br/>train, hotel, cab"| B(Assistant Agent)
+        end
+
+        subgraph A2A["Agent-to-Agent (A2A) Collaboration"]
+            B -->|"Delegates<br/>Full Trip Planning<br/>(A2A)"| C{Travel Planning Agent}
+
+            C -->|"Delegates<br/>Book Train<br/>(A2A)"| D(Train Booking Agent)
+            C -->|"Delegates<br/>Find Hotel<br/>(A2A)"| E(Hotel Booking Agent)
+            C -->|"Delegates<br/>Arrange Cab<br/>(A2A)"| F(Cab Service Agent)
+
+            D -->|"Train Details<br/>(A2A)"| C
+            E -->|"Hotel Options<br/>(A2A)"| C
+            F -->|"Cab Confirmation<br/>(A2A)"| C
+
+            C -->|"Compiles & Returns Full Plan<br/>(A2A)"| B
+        end
+
+        subgraph MCP["Agent-to-Tool (MCP) Interactions"]
+            D -->|"Requests Train API Access<br/>(MCP)"| D1("Train API Server (MCP)")
+            D1 -->|"Calls External Train API"| D2(External Train Booking System)
+            D2 -->|"Returns Train Data"| D1
+            D1 -->|"Provides Train Details<br/>(MCP)"| D
+
+            E -->|"Requests Hotel API Access<br/>(MCP)"| E1("Hotel API Server (MCP)")
+            E1 -->|"Calls External Hotel API"| E2(External Hotel Booking System)
+            E2 -->|"Returns Hotel Data"| E1
+            E1 -->|"Provides Hotel Options<br/>(MCP)"| E
+
+            F -->|"Requests Cab API Access<br/>(MCP)"| F1("Cab API Server (MCP)")
+            F1 -->|"Calls External Cab API"| F2(External Cab Service)
+            F2 -->|"Returns Cab Confirmation"| F1
+            F1 -->|"Provides Cab Confirmation<br/>(MCP)"| F
+        end
+
+        B -->|"Presents Full Itinerary"| A
+    ```
+
+  </TabItem>
+  <TabItem value="mcp-a2a" label="MCP vs A2A">
+    <table>
+    <thead>
+        <tr>
+        <th>Aspect</th>
+        <th>Model Context Protocol (MCP)</th>
+        <th>Agent-2-Agent (A2A)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Visualization</td>
+            <td>
+            ```mermaid
+            graph TD
+                A[AI Agent/LLM] -->|Requests Tool Call with Context| B{MCP Client}
+                B -->|Standardized Request| C[MCP Server]
+                C -->|Executes Tool/Accesses Data| D[External API/Tool/Database]
+                D -->|Tool Result| C
+                C -->|Standardized Response| B
+                B -->|Provides Result to LLM| A
+            ```
+            </td>
+            <td>
+            ```mermaid
+            graph TD
+                user --> client(Client Agent)
+                client -->|A2A| remote1(Remote Agent)
+                client -->|A2A| remote2(Remote Agent)
+                client --> user
+            ```
+            </td>
+        </tr>
+        <tr>
+        <td>Purpose</td>
+        <td>
+            Standardizes how AI models (LLMs) integrate and share data with external
+            tools, systems, and data sources. Connects AI to the "real world"
+            context
+        </td>
+        <td>
+            Enables AI agents to communicate and collaborate securely across
+            platforms and vendors. Creates a "universal language" for agents to work
+            together
+        </td>
+        </tr>
+        <tr>
+        <td>Developed By</td>
+        <td>Anthropic</td>
+        <td>Google</td>
+        </tr>
+        <tr>
+        <td>Integration Paradigm</td>
+        <td>
+            Vertical integration: AI model to external data/tools. Extends AI's
+            context awareness
+        </td>
+        <td>
+            Horizontal integration: Agent to Agent communication. Enables
+            multi-agent workflows
+        </td>
+        </tr>
+        <tr>
+        <td>Core Entities Interacting</td>
+        <td>Host (AI app), Client (intermediary), Server (data/tool provider)</td>
+        <td>Client Agent (requests tasks), Remote Agent (performs tasks)</td>
+        </tr>
+        <tr>
+        <td>Key Abstractions</td>
+        <td>
+            Tools (executable functions), Resources (structured data streams),
+            Prompts (instruction templates)
+        </td>
+        <td>
+            Agent Cards (capability discovery), Tasks (unit of work), Parts
+            (multi-modal content)
+        </td>
+        </tr>
+        <tr>
+        <td>Communication Protocol</td>
+        <td>
+            JSON-RPC 2.0 over stateful connections. Inspired by Language Server
+            Protocol (LSP)
+        </td>
+        <td>
+            JSON-RPC 2.0 for message exchange; HTTP(S) as transport; Server-Sent
+            Events (SSE) for real-time streaming
+        </td>
+        </tr>
+        <tr>
+        <td>Content Types Supported</td>
+        <td>
+            Structured data streams (Resources), API responses, file contents, logs
+        </td>
+        <td>
+            Multi-modal "Parts": TextPart, FilePart (binary data), DataPart
+            (structured JSON)
+        </td>
+        </tr>
+        <tr>
+        <td>Capability Discovery Mechanism</td>
+        <td>
+            Dynamic tool discovery: AI queries for available tools at runtime
+        </td>
+        <td>
+            Agent Cards: Machine-readable manifests describing agent skills, I/O
+            types, authentication
+        </td>
+        </tr>
+        <tr>
+        <td>Task Management Model</td>
+        <td>
+            Focus on providing context and tools for AI to execute tasks. AI decides
+            tool use
+        </td>
+        <td>
+            Structured around "Tasks" with unique IDs and defined states; supports
+            long-running tasks with progress updates
+        </td>
+        </tr>
+        <tr>
+        <td>Security & Authentication Approach</td>
+        <td>
+            User consent and control, data privacy, tool safety. Requires explicit
+            user consent for data access/operations/tool invocation
+        </td>
+        <td>
+            "Secure by Default." Standardized access controls,
+            authentication/authorization options (e.g., JWTs for push
+            notifications). "Opaque" agent design
+        </td>
+        </tr>
+        <tr>
+        <td>Key Advantages</td>
+        <td>
+            Standardized integration, enhanced context awareness, dynamic tool
+            discovery, improved security/access control, ecosystem growth
+        </td>
+        <td>
+            Cross-platform communication, scalability without rework, smarter
+            automation, faster time-to-value, unified governance
+        </td>
+        </tr>
+        <tr>
+        <td>Primary Challenges</td>
+        <td>
+            Engineering complexity, scalability/performance, potential
+            fragmentation, identity management, identified security vulnerabilities
+            (prompt injection, tool permissions)
+        </td>
+        <td>
+            Inherited complexity/cost of multi-agent systems. Ongoing development
+            for advanced features (e.g., dynamic UX negotiation)
+        </td>
+        </tr>
+        <tr>
+        <td>Typical Use Cases</td>
+        <td>
+            Enterprise assistants (CRM, docs), natural language data access (SQL),
+            desktop assistants (file access), multi-tool agents, customer support
+            chatbots, personalized learning, healthcare diagnostics
+        </td>
+        <td>
+            Enterprise automation (ordering, supply chain), hiring process
+            simplification, customer experience, general multi-agent orchestration
+        </td>
+        </tr>
+        <tr>
+        <td>Relationship to LLMs/Agents</td>
+        <td>
+            Grounds LLMs/agents in real-time, external data and enables them to take
+            actions in the real world
+        </td>
+        <td>
+            Enables communication between autonomous AI agents, regardless of their
+            internal LLM or framework
+        </td>
+        </tr>
+    </tbody>
+    </table>
+  </TabItem>
+</Tabs>
