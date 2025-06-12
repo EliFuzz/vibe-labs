@@ -52,11 +52,12 @@ import Tabs from "@theme/Tabs";
     ```
 
   </TabItem>
-  <TabItem value="mcp-a2a" label="MCP vs A2A">
+  <TabItem value="mcp-comparison" label="Comparison">
     <table>
         <thead>
             <tr>
                 <th>Aspect</th>
+                <th>Function Calling</th>
                 <th>Model Context Protocol (MCP)</th>
                 <th>Agent-2-Agent (A2A)</th>
             </tr>
@@ -65,123 +66,202 @@ import Tabs from "@theme/Tabs";
             <tr>
                 <td>Visualization</td>
                 <td>
-                ```mermaid
-                graph TD
-                A[AI Agent/LLM] -->|Requests Tool Call with Context| B{MCP Client}
-                B -->|Standardized Request| C[MCP Server]
-                C -->|Executes Tool/Accesses Data| D[External API/Tool/Database]
-                D -->|Tool Result| C
-                C -->|Standardized Response| B
-                B -->|Provides Result to LLM| A
-            ```
-            </td>
-            <td>
-            ```mermaid
-            graph TD
-                user --> client(Client Agent)
-                client -->|A2A| remote1(Remote Agent)
-                client -->|A2A| remote2(Remote Agent)
-                client --> user
-            ```
-            </td>
-        </tr>
-        <tr>
-            <td>Purpose</td>
-            <td>Standardizes how AI models (LLMs) integrate and share data with external tools, systems, and data sources. Connects AI to the "real world" context</td>
-            <td>Enables AI agents to communicate and collaborate securely across platforms and vendors. Creates a "universal language" for agents to work together</td>
-        </tr>
-        <tr>
-            <td>Developed By</td>
-            <td>Anthropic</td>
-            <td>Google</td>
-        </tr>
-        <tr>
-            <td>Integration Paradigm</td>
-            <td>Vertical integration: AI model to external data/tools. Extends AI's context awareness</td>
-            <td>Horizontal integration: Agent to Agent communication. Enables multi-agent workflows</td>
-        </tr>
-        <tr>
-            <td>Core Entities Interacting</td>
-            <td>
-                <ul>
-                    <li>Host: AI app</li>
-                    <li>Client: intermediary</li>
-                    <li>Server: data/tool provider</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>Client Agent: requests tasks</li>
-                    <li>Remote Agent: performs tasks</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Key Abstractions</td>
-            <td>
-                <ul>
-                    <li>Tools: executable functions</li>
-                    <li>Resources: structured data streams</li>
-                    <li>Prompts: instruction templates</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>Agent Cards: capability discovery</li>
-                    <li>Tasks: unit of work</li>
-                    <li>Parts: multi-modal content</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Communication Protocol</td>
-            <td>JSON-RPC 2.0 over stateful connections. Inspired by Language Server Protocol (LSP)</td>
-            <td>JSON-RPC 2.0 for message exchange; HTTP(S) as transport; Server-Sent Events (SSE) for real-time streaming</td>
-        </tr>
-        <tr>
-            <td>Content Types Supported</td>
-            <td>Structured data streams (Resources), API responses, file contents, logs</td>
-            <td>Multi-modal "Parts": TextPart, FilePart (binary data), DataPart (structured JSON)</td>
-        </tr>
-        <tr>
-            <td>Capability Discovery Mechanism</td>
-            <td>Dynamic tool discovery: AI queries for available tools at runtime</td>
-            <td>Agent Cards: Machine-readable manifests describing agent skills, I/O types, authentication</td>
-        </tr>
-        <tr>
-            <td>Task Management Model</td>
-            <td>Focus on providing context and tools for AI to execute tasks. AI decides tool use</td>
-            <td>Structured around "Tasks" with unique IDs and defined states; supports long-running tasks with progress updates</td>
-        </tr>
-        <tr>
-            <td>Security & Authentication Approach</td>
-            <td>
-                User consent and control, data privacy, tool safety. Requires explicit
-                user consent for data access/operations/tool invocation
-            </td>
-            <td>"Secure by Default." Standardized access controls, authentication/authorization options (e.g., JWTs for push notifications). "Opaque" agent design</td>
-        </tr>
-        <tr>
-            <td>Key Advantages</td>
-            <td>Standardized integration, enhanced context awareness, dynamic tool discovery, improved security/access control, ecosystem growth</td>
-            <td>Cross-platform communication, scalability without rework, smarter automation, faster time-to-value, unified governance</td>
-        </tr>
-        <tr>
-            <td>Primary Challenges</td>
-            <td>Engineering complexity, scalability/performance, potential fragmentation, identity management, identified security vulnerabilities (prompt injection, tool permissions)</td>
-            <td>Inherited complexity/cost of multi-agent systems. Ongoing development for advanced features (e.g., dynamic UX negotiation)</td>
-        </tr>
-        <tr>
-            <td>Typical Use Cases</td>
-            <td>Enterprise assistants (CRM, docs), natural language data access (SQL), desktop assistants (file access), multi-tool agents, customer support chatbots, personalized learning, healthcare diagnostics</td>
-            <td>Enterprise automation (ordering, supply chain), hiring process simplification, customer experience, general multi-agent orchestration</td>
-        </tr>
-        <tr>
-            <td>Relationship to LLMs/Agents</td>
-            <td>Grounds LLMs/agents in real-time, external data and enables them to take actions in the real world</td>
-            <td>Enables communication between autonomous AI agents, regardless of their internal LLM or framework</td>
-        </tr>
-    </tbody>
+                    ```mermaid
+                    sequenceDiagram
+                    participant user as User
+                    participant llm as LLM
+                    participant functionRegistry as Function Registry
+                    participant function as Function
+
+                    user->>llm: send prompt
+                    llm->>llm: process prompt
+                    llm->>functionRegistry: identify required function
+                    functionRegistry->>llm: return function details
+                    llm->>function: call function with parameters
+                    function->>llm: return function output
+                    llm->>llm: incorporate function output
+                    llm->>user: return final response
+                    ```
+                </td>
+                <td>
+                    ```mermaid
+                    sequenceDiagram
+                    participant user as User
+                    participant aiAgent as AI Agent/MCP Host
+                    participant mcpClient as MCP Client
+                    participant llm as LLM Model
+                    participant mcpServer as MCP Server
+                    participant externalSystem as External API/Tool/Database
+
+                    aiAgent->>mcpClient: initialize tools
+                    mcpClient->>mcpServer: initialize connection
+                    mcpServer->>mcpClient: return awailable tools/resources
+                    user->>aiAgent: send query
+                    aiAgent ->>mcpClient: provide awailable tools/resources
+                    mcpClient->>llm: send query with awailable tools/resources
+                    llm->>mcpClient: return response with tool/resource call
+                    mcpClient->>mcpServer: call tool
+                    mcpServer->>externalSystem: call external system
+                    externalSystem->>mcpServer: return response
+                    mcpServer->>mcpClient: return tool/resource response
+                    mcpClient->>llm: send tool/resource response
+                    llm->>mcpClient: return final answer
+                    mcpClient->>aiAgent: return final answer
+                    aiAgent->>user: return final response
+                    ```
+                </td>
+                <td>
+                    ```mermaid
+                    sequenceDiagram
+                    participant user as User
+                    participant client as Client Agent
+                    participant server as Server Agent
+                    participant remote1 as Remote Agent 1
+                    participant remote2 as Remote Agent 2
+
+                    user->>client: send query
+
+                    alt sub-task
+                        client->>server: send task/subscribe
+                        server->>remote1: forward task
+                        remote1->>server: status working
+                        server->>client: push status update
+                        remote1->>server: status done
+                        server->>client: push final result
+                    end
+
+                    alt sub-task
+                        client->>server: send task/subscribe
+                        server->>remote2: forward task
+                        remote2->>server: status working
+                        server->>client: push status update
+                        remote2->>server: status done
+                        server->>client: push final result
+                    end
+
+                    client->>user: return final response
+                    ```
+                </td>
+            </tr>
+            <tr>
+                <td>Purpose</td>
+                <td>Allows Large Language Models (LLMs) to interact with external tools, APIs, or databases by generating structured function calls in response to user prompts. Extends the LLM's capabilities beyond its training data</td>
+                <td>Standardizes how AI models (LLMs) integrate and share data with external tools, systems, and data sources. Connects AI to the "real world" context</td>
+                <td>Enables AI agents to communicate and collaborate securely across platforms and vendors. Creates a "universal language" for agents to work together</td>
+            </tr>
+            <tr>
+                <td>Developed By</td>
+                <td>Various LLM providers</td>
+                <td>Anthropic</td>
+                <td>Google</td>
+            </tr>
+            <tr>
+                <td>Integration Paradigm</td>
+                <td>Direct integration: LLM to external functions/APIs. Extends the LLM's immediate action capabilities</td>
+                <td>Vertical integration: AI model to external data/tools. Extends AI's context awareness</td>
+                <td>Horizontal integration: Agent to Agent communication. Enables multi-agent workflows</td>
+            </tr>
+            <tr>
+                <td>Core Entities Interacting</td>
+                <td>
+                    <ul>
+                        <li>LLM: generates function calls</li>
+                        <li>External Tool/API: executes the function call</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Host: AI app</li>
+                        <li>Client: intermediary</li>
+                        <li>Server: data/tool provider</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Client Agent: requests tasks</li>
+                        <li>Remote Agent: performs tasks</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Key Abstractions</td>
+                <td>
+                    <ul>
+                        <li>Function Definitions: schema describing available functions (name, parameters, description)</li>
+                        <li>Function Calls: structured output from LLM (function name, arguments)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Tools: executable functions</li>
+                        <li>Resources: structured data streams</li>
+                        <li>Prompts: instruction templates</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Agent Cards: capability discovery</li>
+                        <li>Tasks: unit of work</li>
+                        <li>Parts: multi-modal content</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Communication Protocol</td>
+                <td>Varies by LLM provider, often JSON-based, embedded within the LLM's response format</td>
+                <td>JSON-RPC 2.0 over stateful connections. Inspired by Language Server Protocol (LSP)</td>
+                <td>JSON-RPC 2.0 for message exchange; HTTP(S) as transport; Server-Sent Events (SSE) for real-time streaming</td>
+            </tr>
+            <tr>
+                <td>Content Types Supported</td>
+                <td>Typically structured data (JSON) for function arguments and tool output; can be text, and potentially other modalities depending on the tool</td>
+                <td>Structured data streams (Resources), API responses, file contents, logs</td>
+                <td>Multi-modal "Parts": TextPart, FilePart (binary data), DataPart (structured JSON)</td>
+            </tr>
+            <tr>
+                <td>Capability Discovery Mechanism</td>
+                <td>Function definitions provided to the LLM at the time of the API call, often via a prompt or a dedicated `tools` parameter</td>
+                <td>Dynamic tool discovery: AI queries for available tools at runtime</td>
+                <td>Agent Cards: Machine-readable manifests describing agent skills, I/O types, authentication</td>
+            </tr>
+            <tr>
+                <td>Task Management Model</td>
+                <td>Single-shot or chained execution of functions as determined by the LLM in response to a user query. Typically, a request-response model</td>
+                <td>Focus on providing context and tools for AI to execute tasks. AI decides tool use</td>
+                <td>Structured around "Tasks" with unique IDs and defined states; supports long-running tasks with progress updates</td>
+            </tr>
+            <tr>
+                <td>Security & Authentication Approach</td>
+                <td>Leverages existing security mechanisms of the external APIs being called. Responsibility for secure execution typically lies with the application integrating the LLM and the tools</td>
+                <td>User consent and control, data privacy, tool safety. Requires explicit user consent for data access/operations/tool invocation</td>
+                <td>"Secure by Default." Standardized access controls, authentication/authorization options (e.g., JWTs for push notifications). "Opaque" agent design</td>
+            </tr>
+            <tr>
+                <td>Key Advantages</td>
+                <td>Extends LLM capabilities, simple to implement for basic interactions, allows LLMs to access real-time information and perform actions</td>
+                <td>Standardized integration, enhanced context awareness, dynamic tool discovery, improved security/access control, ecosystem growth</td>
+                <td>Cross-platform communication, scalability without rework, smarter automation, faster time-to-value, unified governance</td>
+            </tr>
+            <tr>
+                <td>Primary Challenges</td>
+                <td>Hallucination (LLM might invent functions or arguments), security risks if not properly sandboxed, limited context for complex multi-step processes, vendor-specific implementations</td>
+                <td>Engineering complexity, scalability/performance, potential fragmentation, identity management, identified security vulnerabilities (prompt injection, tool permissions)</td>
+                <td>Inherited complexity/cost of multi-agent systems. Ongoing development for advanced features (e.g., dynamic UX negotiation)</td>
+            </tr>
+            <tr>
+                <td>Typical Use Cases</td>
+                <td>Chatbots retrieving real-time data (weather, stock prices), executing simple commands (sending emails, setting reminders), data retrieval from databases</td>
+                <td>Enterprise assistants (CRM, docs), natural language data access (SQL), desktop assistants (file access), multi-tool agents, customer support chatbots, personalized learning, healthcare diagnostics</td>
+                <td>Enterprise automation (ordering, supply chain), hiring process simplification, customer experience, general multi-agent orchestration</td>
+            </tr>
+            <tr>
+                <td>Relationship to LLMs/Agents</td>
+                <td>A fundamental capability that allows LLMs to interact with the external world and perform actions beyond generating text</td>
+                <td>Grounds LLMs/agents in real-time, external data and enables them to take actions in the real world</td>
+                <td>Enables communication between autonomous AI agents, regardless of their internal LLM or framework</td>
+            </tr>
+        </tbody>
     </table>
+
   </TabItem>
 </Tabs>
