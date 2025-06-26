@@ -1,0 +1,21 @@
+---
+title: Cluely
+description: Cluely Prompt
+hide_table_of_contents: true
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+import Default from "!raw-loader!./assets/cluely/default.txt";
+import Enterprise from "!raw-loader!./assets/cluely/enterprise.txt";
+
+<Tabs queryString="primary">
+  <TabItem value="default" label="Default">
+    <CodeBlock language="markdown">{Default}</CodeBlock>
+  </TabItem>
+  <TabItem value="enterprise" label="Enterprise">
+    <CodeBlock language="markdown">{Enterprise}</CodeBlock>
+  </TabItem>
+</Tabs>
